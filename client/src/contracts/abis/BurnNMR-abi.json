@@ -1,0 +1,17 @@
+[
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "getToken",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "pure",
+    "type": "function"
+  }
+]
