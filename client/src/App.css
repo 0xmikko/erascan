@@ -17,6 +17,12 @@ h1 {
   color: #4a4f55;
 }
 
+h4 {
+  font-size: 17px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
+  font-weight: bold;
+}
+
 .App {
   text-align: center;
   background-color: #ff2c34;

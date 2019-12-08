@@ -14,6 +14,8 @@ import { Link } from 'react-router-dom'
 import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import * as moment from 'moment'
+import QueryWrap from "../../components/QueryWrap";
+import AgreementsListComponent from "./AgreementsListComponent";
 
 const GRAPH_QUERY = gql`
   {
@@ -37,58 +39,12 @@ const GRAPH_QUERY = gql`
   }
 `
 
-export const AgreementsListTop20Widget = props => {
+export const AgreementsListTop20Widget = () => {
   return (
     <WindowWidget title={'Last 20 Agreements'}>
-      <Query query={GRAPH_QUERY}>
-        {({ data, error, loading }) => {
-          console.log(data, error, loading)
-
-          if (error) {
-            return error
-          }
-
-          if (!loading) {
-            const { oneWayGriefingAgreements } = data
-
-            const postsCells = oneWayGriefingAgreements.map(e => (
-              <tr>
-                <td width={'50%'}>
-                  <Link to={'/post/' + e.id}>
-                    <div style={{ fontSize: '14px' }}>
-                      {e.id.substr(0, 20)}...
-                    </div>
-                  </Link>
-                  <div
-                    style={{
-                      fontSize: '11px',
-                      color: '#A808A96',
-                    }}
-                  >
-                    {moment(1000 * parseInt(e.createdTimestamp)).fromNow()}
-                  </div>
-                </td>
-                <td align={'right'}>
-                  <div style={{ fontSize: '14px' }}>
-                    Author <a href={''}>{e.creator.substr(0, 20)}...</a>
-                  </div>
-                  <div style={{ fontSize: '14px' }}>
-                    Feed <a href={''}>{e.creator.substr(0, 20)}...</a>
-                  </div>
-                </td>
-              </tr>
-            ))
-
-            return (
-              <Table style={{ margin: 0 }}>
-                <tbody>{postsCells}</tbody>
-              </Table>
-            )
-          }
-
-          return 'Loading'
-        }}
-      </Query>
+      <QueryWrap query={GRAPH_QUERY}>
+        <AgreementsListComponent />
+      </QueryWrap>
     </WindowWidget>
   )
 }

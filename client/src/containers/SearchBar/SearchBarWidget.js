@@ -20,9 +20,7 @@ export const SearchBarWidget = ({}) => {
   return (
     <Card>
       <Card.Body style={{ backgroundColor: '#FFFFFF' }}>
-        <p style={{ fontSize: 14, marginBottom: 7, fontStyle: '14pt' }}>
-          <b>Erasure track+x search</b>
-        </p>
+        <h4>Erasure track+x search</h4>
         <InputGroup className="mb-3">
           <Form.Control
             type="text"
