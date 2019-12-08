@@ -11,18 +11,11 @@ import InfiniteScroll from 'react-infinite-scroller'
 import TableListView from './TableListView'
 
 const InfiniteScrollListView = props => {
-    return (
-        <InfiniteScroll
-            page={1}
-            loadMore={props.loadMore}
-            hasMore={props.hasMore}
-        >
-            <TableListView
-                tableHeader={props.tableHeader}
-                items={props.items}
-            />
-        </InfiniteScroll>
-    )
+  return (
+    <InfiniteScroll page={1} loadMore={props.loadMore} hasMore={props.hasMore}>
+      <TableListView tableHeader={props.tableHeader} items={props.items} />
+    </InfiniteScroll>
+  )
 }
 
 export default InfiniteScrollListView

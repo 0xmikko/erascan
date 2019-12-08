@@ -1,432 +1,432 @@
 {
-    "contractName": "TestEventMetadata",
-    "abi": [
+  "contractName": "TestEventMetadata",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": false,
-                    "internalType": "bytes",
-                    "name": "metadata",
-                    "type": "bytes"
-                }
-            ],
-            "name": "MetadataSet",
-            "type": "event"
-        },
-        {
-            "constant": false,
-            "inputs": [
-                {
-                    "internalType": "bytes",
-                    "name": "metadata",
-                    "type": "bytes"
-                }
-            ],
-            "name": "setMetadata",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "metadata",
+          "type": "bytes"
         }
+      ],
+      "name": "MetadataSet",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "metadata",
+          "type": "bytes"
+        }
+      ],
+      "name": "setMetadata",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506101cb806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063ee57e36f14610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b6100f4816100f7565b50565b7fbb39ebb37e60fb5d606ffdb749d2336e56b88e6c88c4bd6513b308f643186eed816040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015957808201518184015260208101905061013e565b50505050905090810190601f1680156101865780820380516001836020036101000a031916815260200191505b509250505060405180910390a15056fea265627a7a7231582066a90afd9014b48d62942b43db66cacaf98337b8d308c14b7058170529a3a79f64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063ee57e36f14610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b6100f4816100f7565b50565b7fbb39ebb37e60fb5d606ffdb749d2336e56b88e6c88c4bd6513b308f643186eed816040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015957808201518184015260208101905061013e565b50505050905090810190601f1680156101865780820380516001836020036101000a031916815260200191505b509250505060405180910390a15056fea265627a7a7231582066a90afd9014b48d62942b43db66cacaf98337b8d308c14b7058170529a3a79f64736f6c634300050d0032",
+  "sourceMap": "66:155:36:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:155:36;;;;;;;",
+  "deployedSourceMap": "66:155:36:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:155:36;;;;;;;;;;;;;;;;;;;116:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;116:103:36;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;116:103:36;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;116:103:36;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;116:103:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;116:103:36;;;;;;;;;;;;;;;:::i;:::-;;;176:36;203:8;176:26;:36::i;:::-;116:103;:::o;274:97:16:-;343:21;355:8;343:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;343:21:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;274:97;:::o",
+  "source": "pragma solidity ^0.5.13;\n\nimport \"../modules/EventMetadata.sol\";\n\ncontract TestEventMetadata is EventMetadata {\n    function setMetadata(bytes memory metadata) public {\n       EventMetadata._setMetadata(metadata);\n    }\n}\n",
+  "sourcePath": "/Users/mikhail/Coding/erasure/contracts/test-contracts/TestEventMetadata.sol",
+  "ast": {
+    "absolutePath": "/Users/mikhail/Coding/erasure/contracts/test-contracts/TestEventMetadata.sol",
+    "exportedSymbols": {
+      "TestEventMetadata": [6907]
+    },
+    "id": 6908,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6891,
+        "literals": ["solidity", "^", "0.5", ".13"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:36"
+      },
+      {
+        "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/EventMetadata.sol",
+        "file": "../modules/EventMetadata.sol",
+        "id": 6892,
+        "nodeType": "ImportDirective",
+        "scope": 6908,
+        "sourceUnit": 3609,
+        "src": "26:38:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6893,
+              "name": "EventMetadata",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3608,
+              "src": "96:13:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EventMetadata_$3608",
+                "typeString": "contract EventMetadata"
+              }
+            },
+            "id": 6894,
+            "nodeType": "InheritanceSpecifier",
+            "src": "96:13:36"
+          }
+        ],
+        "contractDependencies": [3608],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6907,
+        "linearizedBaseContracts": [6907, 3608],
+        "name": "TestEventMetadata",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 6905,
+              "nodeType": "Block",
+              "src": "167:52:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6902,
+                        "name": "metadata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6896,
+                        "src": "203:8:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6899,
+                        "name": "EventMetadata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3608,
+                        "src": "176:13:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_EventMetadata_$3608_$",
+                          "typeString": "type(contract EventMetadata)"
+                        }
+                      },
+                      "id": 6901,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_setMetadata",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3607,
+                      "src": "176:26:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes_memory_ptr_$returns$__$",
+                        "typeString": "function (bytes memory)"
+                      }
+                    },
+                    "id": 6903,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "176:36:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 6904,
+                  "nodeType": "ExpressionStatement",
+                  "src": "176:36:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6906,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setMetadata",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6897,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6896,
+                  "name": "metadata",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6906,
+                  "src": "137:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 6895,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "137:5:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "136:23:36"
+            },
+            "returnParameters": {
+              "id": 6898,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "167:0:36"
+            },
+            "scope": 6907,
+            "src": "116:103:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 6908,
+        "src": "66:155:36"
+      }
     ],
-    "bytecode": "0x608060405234801561001057600080fd5b506101cb806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063ee57e36f14610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b6100f4816100f7565b50565b7fbb39ebb37e60fb5d606ffdb749d2336e56b88e6c88c4bd6513b308f643186eed816040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015957808201518184015260208101905061013e565b50505050905090810190601f1680156101865780820380516001836020036101000a031916815260200191505b509250505060405180910390a15056fea265627a7a7231582066a90afd9014b48d62942b43db66cacaf98337b8d308c14b7058170529a3a79f64736f6c634300050d0032",
-    "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063ee57e36f14610030575b600080fd5b6100e96004803603602081101561004657600080fd5b810190808035906020019064010000000081111561006357600080fd5b82018360208201111561007557600080fd5b8035906020019184600183028401116401000000008311171561009757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506100eb565b005b6100f4816100f7565b50565b7fbb39ebb37e60fb5d606ffdb749d2336e56b88e6c88c4bd6513b308f643186eed816040518080602001828103825283818151815260200191508051906020019080838360005b8381101561015957808201518184015260208101905061013e565b50505050905090810190601f1680156101865780820380516001836020036101000a031916815260200191505b509250505060405180910390a15056fea265627a7a7231582066a90afd9014b48d62942b43db66cacaf98337b8d308c14b7058170529a3a79f64736f6c634300050d0032",
-    "sourceMap": "66:155:36:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:155:36;;;;;;;",
-    "deployedSourceMap": "66:155:36:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:155:36;;;;;;;;;;;;;;;;;;;116:103;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;116:103:36;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;116:103:36;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;116:103:36;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;116:103:36;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;116:103:36;;;;;;;;;;;;;;;:::i;:::-;;;176:36;203:8;176:26;:36::i;:::-;116:103;:::o;274:97:16:-;343:21;355:8;343:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;343:21:16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;274:97;:::o",
-    "source": "pragma solidity ^0.5.13;\n\nimport \"../modules/EventMetadata.sol\";\n\ncontract TestEventMetadata is EventMetadata {\n    function setMetadata(bytes memory metadata) public {\n       EventMetadata._setMetadata(metadata);\n    }\n}\n",
-    "sourcePath": "/Users/mikhail/Coding/erasure/contracts/test-contracts/TestEventMetadata.sol",
-    "ast": {
-        "absolutePath": "/Users/mikhail/Coding/erasure/contracts/test-contracts/TestEventMetadata.sol",
-        "exportedSymbols": {
-            "TestEventMetadata": [6907]
-        },
-        "id": 6908,
-        "nodeType": "SourceUnit",
-        "nodes": [
-            {
-                "id": 6891,
-                "literals": ["solidity", "^", "0.5", ".13"],
-                "nodeType": "PragmaDirective",
-                "src": "0:24:36"
+    "src": "0:222:36"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mikhail/Coding/erasure/contracts/test-contracts/TestEventMetadata.sol",
+    "exportedSymbols": {
+      "TestEventMetadata": [6907]
+    },
+    "id": 6908,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6891,
+        "literals": ["solidity", "^", "0.5", ".13"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:36"
+      },
+      {
+        "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/EventMetadata.sol",
+        "file": "../modules/EventMetadata.sol",
+        "id": 6892,
+        "nodeType": "ImportDirective",
+        "scope": 6908,
+        "sourceUnit": 3609,
+        "src": "26:38:36",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 6893,
+              "name": "EventMetadata",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3608,
+              "src": "96:13:36",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_EventMetadata_$3608",
+                "typeString": "contract EventMetadata"
+              }
             },
-            {
-                "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/EventMetadata.sol",
-                "file": "../modules/EventMetadata.sol",
-                "id": 6892,
-                "nodeType": "ImportDirective",
-                "scope": 6908,
-                "sourceUnit": 3609,
-                "src": "26:38:36",
-                "symbolAliases": [],
-                "unitAlias": ""
-            },
-            {
-                "baseContracts": [
-                    {
-                        "arguments": null,
-                        "baseName": {
-                            "contractScope": null,
-                            "id": 6893,
-                            "name": "EventMetadata",
-                            "nodeType": "UserDefinedTypeName",
-                            "referencedDeclaration": 3608,
-                            "src": "96:13:36",
-                            "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_EventMetadata_$3608",
-                                "typeString": "contract EventMetadata"
-                            }
-                        },
-                        "id": 6894,
-                        "nodeType": "InheritanceSpecifier",
-                        "src": "96:13:36"
-                    }
-                ],
-                "contractDependencies": [3608],
-                "contractKind": "contract",
-                "documentation": null,
-                "fullyImplemented": true,
-                "id": 6907,
-                "linearizedBaseContracts": [6907, 3608],
-                "name": "TestEventMetadata",
-                "nodeType": "ContractDefinition",
-                "nodes": [
-                    {
-                        "body": {
-                            "id": 6905,
-                            "nodeType": "Block",
-                            "src": "167:52:36",
-                            "statements": [
-                                {
-                                    "expression": {
-                                        "argumentTypes": null,
-                                        "arguments": [
-                                            {
-                                                "argumentTypes": null,
-                                                "id": 6902,
-                                                "name": "metadata",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6896,
-                                                "src": "203:8:36",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_bytes_memory_ptr",
-                                                    "typeString": "bytes memory"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_bytes_memory_ptr",
-                                                    "typeString": "bytes memory"
-                                                }
-                                            ],
-                                            "expression": {
-                                                "argumentTypes": null,
-                                                "id": 6899,
-                                                "name": "EventMetadata",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 3608,
-                                                "src": "176:13:36",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_EventMetadata_$3608_$",
-                                                    "typeString": "type(contract EventMetadata)"
-                                                }
-                                            },
-                                            "id": 6901,
-                                            "isConstant": false,
-                                            "isLValue": false,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberName": "_setMetadata",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 3607,
-                                            "src": "176:26:36",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_bytes_memory_ptr_$returns$__$",
-                                                "typeString": "function (bytes memory)"
-                                            }
-                                        },
-                                        "id": 6903,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "176:36:36",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_tuple$__$",
-                                            "typeString": "tuple()"
-                                        }
-                                    },
-                                    "id": 6904,
-                                    "nodeType": "ExpressionStatement",
-                                    "src": "176:36:36"
-                                }
-                            ]
-                        },
-                        "documentation": null,
-                        "id": 6906,
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "setMetadata",
-                        "nodeType": "FunctionDefinition",
-                        "parameters": {
-                            "id": 6897,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 6896,
-                                    "name": "metadata",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 6906,
-                                    "src": "137:21:36",
-                                    "stateVariable": false,
-                                    "storageLocation": "memory",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_bytes_memory_ptr",
-                                        "typeString": "bytes"
-                                    },
-                                    "typeName": {
-                                        "id": 6895,
-                                        "name": "bytes",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "137:5:36",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_bytes_storage_ptr",
-                                            "typeString": "bytes"
-                                        }
-                                    },
-                                    "value": null,
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "136:23:36"
-                        },
-                        "returnParameters": {
-                            "id": 6898,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "167:0:36"
-                        },
-                        "scope": 6907,
-                        "src": "116:103:36",
-                        "stateMutability": "nonpayable",
-                        "superFunction": null,
-                        "visibility": "public"
-                    }
-                ],
-                "scope": 6908,
-                "src": "66:155:36"
-            }
+            "id": 6894,
+            "nodeType": "InheritanceSpecifier",
+            "src": "96:13:36"
+          }
         ],
-        "src": "0:222:36"
-    },
-    "legacyAST": {
-        "absolutePath": "/Users/mikhail/Coding/erasure/contracts/test-contracts/TestEventMetadata.sol",
-        "exportedSymbols": {
-            "TestEventMetadata": [6907]
-        },
-        "id": 6908,
-        "nodeType": "SourceUnit",
+        "contractDependencies": [3608],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 6907,
+        "linearizedBaseContracts": [6907, 3608],
+        "name": "TestEventMetadata",
+        "nodeType": "ContractDefinition",
         "nodes": [
-            {
-                "id": 6891,
-                "literals": ["solidity", "^", "0.5", ".13"],
-                "nodeType": "PragmaDirective",
-                "src": "0:24:36"
-            },
-            {
-                "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/EventMetadata.sol",
-                "file": "../modules/EventMetadata.sol",
-                "id": 6892,
-                "nodeType": "ImportDirective",
-                "scope": 6908,
-                "sourceUnit": 3609,
-                "src": "26:38:36",
-                "symbolAliases": [],
-                "unitAlias": ""
-            },
-            {
-                "baseContracts": [
-                    {
-                        "arguments": null,
-                        "baseName": {
-                            "contractScope": null,
-                            "id": 6893,
-                            "name": "EventMetadata",
-                            "nodeType": "UserDefinedTypeName",
-                            "referencedDeclaration": 3608,
-                            "src": "96:13:36",
-                            "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_EventMetadata_$3608",
-                                "typeString": "contract EventMetadata"
-                            }
-                        },
-                        "id": 6894,
-                        "nodeType": "InheritanceSpecifier",
-                        "src": "96:13:36"
+          {
+            "body": {
+              "id": 6905,
+              "nodeType": "Block",
+              "src": "167:52:36",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 6902,
+                        "name": "metadata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 6896,
+                        "src": "203:8:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes_memory_ptr",
+                          "typeString": "bytes memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 6899,
+                        "name": "EventMetadata",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3608,
+                        "src": "176:13:36",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_EventMetadata_$3608_$",
+                          "typeString": "type(contract EventMetadata)"
+                        }
+                      },
+                      "id": 6901,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "_setMetadata",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3607,
+                      "src": "176:26:36",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes_memory_ptr_$returns$__$",
+                        "typeString": "function (bytes memory)"
+                      }
+                    },
+                    "id": 6903,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "176:36:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
                     }
-                ],
-                "contractDependencies": [3608],
-                "contractKind": "contract",
-                "documentation": null,
-                "fullyImplemented": true,
-                "id": 6907,
-                "linearizedBaseContracts": [6907, 3608],
-                "name": "TestEventMetadata",
-                "nodeType": "ContractDefinition",
-                "nodes": [
-                    {
-                        "body": {
-                            "id": 6905,
-                            "nodeType": "Block",
-                            "src": "167:52:36",
-                            "statements": [
-                                {
-                                    "expression": {
-                                        "argumentTypes": null,
-                                        "arguments": [
-                                            {
-                                                "argumentTypes": null,
-                                                "id": 6902,
-                                                "name": "metadata",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 6896,
-                                                "src": "203:8:36",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_bytes_memory_ptr",
-                                                    "typeString": "bytes memory"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_bytes_memory_ptr",
-                                                    "typeString": "bytes memory"
-                                                }
-                                            ],
-                                            "expression": {
-                                                "argumentTypes": null,
-                                                "id": 6899,
-                                                "name": "EventMetadata",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 3608,
-                                                "src": "176:13:36",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_EventMetadata_$3608_$",
-                                                    "typeString": "type(contract EventMetadata)"
-                                                }
-                                            },
-                                            "id": 6901,
-                                            "isConstant": false,
-                                            "isLValue": false,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberName": "_setMetadata",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 3607,
-                                            "src": "176:26:36",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_bytes_memory_ptr_$returns$__$",
-                                                "typeString": "function (bytes memory)"
-                                            }
-                                        },
-                                        "id": 6903,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "176:36:36",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_tuple$__$",
-                                            "typeString": "tuple()"
-                                        }
-                                    },
-                                    "id": 6904,
-                                    "nodeType": "ExpressionStatement",
-                                    "src": "176:36:36"
-                                }
-                            ]
-                        },
-                        "documentation": null,
-                        "id": 6906,
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "setMetadata",
-                        "nodeType": "FunctionDefinition",
-                        "parameters": {
-                            "id": 6897,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 6896,
-                                    "name": "metadata",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 6906,
-                                    "src": "137:21:36",
-                                    "stateVariable": false,
-                                    "storageLocation": "memory",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_bytes_memory_ptr",
-                                        "typeString": "bytes"
-                                    },
-                                    "typeName": {
-                                        "id": 6895,
-                                        "name": "bytes",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "137:5:36",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_bytes_storage_ptr",
-                                            "typeString": "bytes"
-                                        }
-                                    },
-                                    "value": null,
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "136:23:36"
-                        },
-                        "returnParameters": {
-                            "id": 6898,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "167:0:36"
-                        },
-                        "scope": 6907,
-                        "src": "116:103:36",
-                        "stateMutability": "nonpayable",
-                        "superFunction": null,
-                        "visibility": "public"
+                  },
+                  "id": 6904,
+                  "nodeType": "ExpressionStatement",
+                  "src": "176:36:36"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 6906,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setMetadata",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 6897,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6896,
+                  "name": "metadata",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 6906,
+                  "src": "137:21:36",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 6895,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "137:5:36",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
                     }
-                ],
-                "scope": 6908,
-                "src": "66:155:36"
-            }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "136:23:36"
+            },
+            "returnParameters": {
+              "id": 6898,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "167:0:36"
+            },
+            "scope": 6907,
+            "src": "116:103:36",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
         ],
-        "src": "0:222:36"
-    },
-    "compiler": {
-        "name": "solc",
-        "version": "0.5.13+commit.5b0b510c.Emscripten.clang",
-        "optimizer": false,
-        "runs": 200
-    },
-    "networks": {},
-    "schemaVersion": "2.2.0",
-    "updatedAt": "2019-12-03T12:04:31.624Z"
+        "scope": 6908,
+        "src": "66:155:36"
+      }
+    ],
+    "src": "0:222:36"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang",
+    "optimizer": false,
+    "runs": 200
+  },
+  "networks": {},
+  "schemaVersion": "2.2.0",
+  "updatedAt": "2019-12-03T12:04:31.624Z"
 }

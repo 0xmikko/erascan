@@ -15,80 +15,59 @@ import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import * as moment from 'moment'
 const GRAPH_QUERY = gql`
-    {
-        posts(first: 20, orderBy: createdTimestamp, orderDirection: desc) {
-            id
-            creator
-            operator
-            staticMetadataB58
-            proofHash
-            createdTimestamp
-        }
+  query getPost($id: String!) {
+    post(id: $id) {
+      id
+      creator
+      operator
+      staticMetadataB58
+      proofHash
+      createdTimestamp
     }
+  }
 `
 
-export const PostDetailsWidget = props => {
-    return (
-        <WindowWidget title={'Last Posts'}>
-            <Query query={GRAPH_QUERY}>
-                {({ data, error, loading }) => {
-                    console.log(data, error, loading)
+export const PostDetailsWidget = ({ id }) => {
+  console.log('FFF', id)
 
-                    if (error) {
-                        return error
-                    }
+  return (
+    <WindowWidget>
+      <Query query={GRAPH_QUERY} variables={{ id }}>
+        {({ data, error, loading }) => {
+          console.log(data, error, loading)
 
-                    if (!loading) {
-                        const { posts } = data
+          if (error) {
+            return error
+          }
 
-                        const postsCells = posts.map(e => (
-                            <tr>
-                                <td width={'50%'}>
-                                    <Link to={'/post/' + e.id}>
-                                        <div style={{ fontSize: '14px' }}>
-                                            {e.id.substr(0, 20)}...
-                                        </div>
-                                    </Link>
-                                    <div
-                                        style={{
-                                            fontSize: '11px',
-                                            color: '#A808A96',
-                                        }}
-                                    >
-                                        {moment(
-                                            1000 * parseInt(e.createdTimestamp)
-                                        ).fromNow()}
-                                    </div>
-                                </td>
-                                <td align={'right'}>
-                                    <div style={{ fontSize: '14px' }}>
-                                        Author{' '}
-                                        <a href={''}>
-                                            {e.creator.substr(0, 20)}...
-                                        </a>
-                                    </div>
-                                    <div style={{ fontSize: '14px' }}>
-                                        Feed{' '}
-                                        <a href={''}>
-                                            {e.creator.substr(0, 20)}...
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))
+          if (!loading) {
+            const { post } = data
 
-                        return (
-                            <Table style={{ margin: 0 }}>
-                                <tbody>{postsCells}</tbody>
-                            </Table>
-                        )
-                    }
+            const postsCells = (
+              <tr>
+                <td width={'50%'}>Creatior</td>
+                <td align={'right'}>
+                  <div style={{ fontSize: '14px' }}>
+                    <a href={'/address/' + post.creator}>
+                      {post.creator.substr(0, 20)}...
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            )
 
-                    return 'Loading'
-                }}
-            </Query>
-        </WindowWidget>
-    )
+            return (
+              <Table style={{ margin: 0 }}>
+                <tbody>{postsCells}</tbody>
+              </Table>
+            )
+          }
+
+          return 'Loading'
+        }}
+      </Query>
+    </WindowWidget>
+  )
 }
 
 export default PostDetailsWidget

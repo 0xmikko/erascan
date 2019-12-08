@@ -1,409 +1,409 @@
 {
-    "contractName": "ProofHashes",
-    "abi": [
+  "contractName": "ProofHashes",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": false,
-                    "internalType": "bytes32",
-                    "name": "hash",
-                    "type": "bytes32"
-                }
-            ],
-            "name": "HashSubmitted",
-            "type": "event"
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
         }
+      ],
+      "name": "HashSubmitted",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158207a7798cc809c6967e013f9606ea51f4367e08d4c91babb69449c532ad5f9a46e64736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158207a7798cc809c6967e013f9606ea51f4367e08d4c91babb69449c532ad5f9a46e64736f6c634300050d0032",
+  "sourceMap": "178:202:20:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;178:202:20;;;;;;;",
+  "deployedSourceMap": "178:202:20:-;;;;;",
+  "source": "pragma solidity ^0.5.13;\n\n\n/// @title ProofHashes\n/// @author Stephane Gosselin (@thegostep) for Numerai Inc\n/// @dev Security contact: security@numer.ai\n/// @dev Version: 1.2.0\ncontract ProofHashes {\n\n    event HashSubmitted(bytes32 hash);\n\n    // state functions\n\n    function _submitHash(bytes32 hash) internal {\n        // emit event\n        emit HashSubmitted(hash);\n    }\n\n}\n",
+  "sourcePath": "/Users/mikhail/Coding/erasure/contracts/modules/ProofHashes.sol",
+  "ast": {
+    "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/ProofHashes.sol",
+    "exportedSymbols": {
+      "ProofHashes": [4360]
+    },
+    "id": 4361,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4345,
+        "literals": ["solidity", "^", "0.5", ".13"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title ProofHashes\n @author Stephane Gosselin (@thegostep) for Numerai Inc\n @dev Security contact: security@numer.ai\n @dev Version: 1.2.0",
+        "fullyImplemented": true,
+        "id": 4360,
+        "linearizedBaseContracts": [4360],
+        "name": "ProofHashes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4349,
+            "name": "HashSubmitted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4348,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4347,
+                  "indexed": false,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4349,
+                  "src": "226:12:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4346,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "226:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "225:14:20"
+            },
+            "src": "206:34:20"
+          },
+          {
+            "body": {
+              "id": 4358,
+              "nodeType": "Block",
+              "src": "314:63:20",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4355,
+                        "name": "hash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4351,
+                        "src": "365:4:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 4354,
+                      "name": "HashSubmitted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4349,
+                      "src": "351:13:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32)"
+                      }
+                    },
+                    "id": 4356,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "351:19:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4357,
+                  "nodeType": "EmitStatement",
+                  "src": "346:24:20"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4359,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_submitHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4352,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4351,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4359,
+                  "src": "291:12:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4350,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "291:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "290:14:20"
+            },
+            "returnParameters": {
+              "id": 4353,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "314:0:20"
+            },
+            "scope": 4360,
+            "src": "270:107:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 4361,
+        "src": "178:202:20"
+      }
     ],
-    "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158207a7798cc809c6967e013f9606ea51f4367e08d4c91babb69449c532ad5f9a46e64736f6c634300050d0032",
-    "deployedBytecode": "0x6080604052600080fdfea265627a7a723158207a7798cc809c6967e013f9606ea51f4367e08d4c91babb69449c532ad5f9a46e64736f6c634300050d0032",
-    "sourceMap": "178:202:20:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;178:202:20;;;;;;;",
-    "deployedSourceMap": "178:202:20:-;;;;;",
-    "source": "pragma solidity ^0.5.13;\n\n\n/// @title ProofHashes\n/// @author Stephane Gosselin (@thegostep) for Numerai Inc\n/// @dev Security contact: security@numer.ai\n/// @dev Version: 1.2.0\ncontract ProofHashes {\n\n    event HashSubmitted(bytes32 hash);\n\n    // state functions\n\n    function _submitHash(bytes32 hash) internal {\n        // emit event\n        emit HashSubmitted(hash);\n    }\n\n}\n",
-    "sourcePath": "/Users/mikhail/Coding/erasure/contracts/modules/ProofHashes.sol",
-    "ast": {
-        "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/ProofHashes.sol",
-        "exportedSymbols": {
-            "ProofHashes": [4360]
-        },
-        "id": 4361,
-        "nodeType": "SourceUnit",
+    "src": "0:381:20"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/ProofHashes.sol",
+    "exportedSymbols": {
+      "ProofHashes": [4360]
+    },
+    "id": 4361,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4345,
+        "literals": ["solidity", "^", "0.5", ".13"],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title ProofHashes\n @author Stephane Gosselin (@thegostep) for Numerai Inc\n @dev Security contact: security@numer.ai\n @dev Version: 1.2.0",
+        "fullyImplemented": true,
+        "id": 4360,
+        "linearizedBaseContracts": [4360],
+        "name": "ProofHashes",
+        "nodeType": "ContractDefinition",
         "nodes": [
-            {
-                "id": 4345,
-                "literals": ["solidity", "^", "0.5", ".13"],
-                "nodeType": "PragmaDirective",
-                "src": "0:24:20"
-            },
-            {
-                "baseContracts": [],
-                "contractDependencies": [],
-                "contractKind": "contract",
-                "documentation": "@title ProofHashes\n @author Stephane Gosselin (@thegostep) for Numerai Inc\n @dev Security contact: security@numer.ai\n @dev Version: 1.2.0",
-                "fullyImplemented": true,
-                "id": 4360,
-                "linearizedBaseContracts": [4360],
-                "name": "ProofHashes",
-                "nodeType": "ContractDefinition",
-                "nodes": [
-                    {
-                        "anonymous": false,
-                        "documentation": null,
-                        "id": 4349,
-                        "name": "HashSubmitted",
-                        "nodeType": "EventDefinition",
-                        "parameters": {
-                            "id": 4348,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 4347,
-                                    "indexed": false,
-                                    "name": "hash",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 4349,
-                                    "src": "226:12:20",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_bytes32",
-                                        "typeString": "bytes32"
-                                    },
-                                    "typeName": {
-                                        "id": 4346,
-                                        "name": "bytes32",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "226:7:20",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_bytes32",
-                                            "typeString": "bytes32"
-                                        }
-                                    },
-                                    "value": null,
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "225:14:20"
-                        },
-                        "src": "206:34:20"
-                    },
-                    {
-                        "body": {
-                            "id": 4358,
-                            "nodeType": "Block",
-                            "src": "314:63:20",
-                            "statements": [
-                                {
-                                    "eventCall": {
-                                        "argumentTypes": null,
-                                        "arguments": [
-                                            {
-                                                "argumentTypes": null,
-                                                "id": 4355,
-                                                "name": "hash",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 4351,
-                                                "src": "365:4:20",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_bytes32",
-                                                    "typeString": "bytes32"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_bytes32",
-                                                    "typeString": "bytes32"
-                                                }
-                                            ],
-                                            "id": 4354,
-                                            "name": "HashSubmitted",
-                                            "nodeType": "Identifier",
-                                            "overloadedDeclarations": [],
-                                            "referencedDeclaration": 4349,
-                                            "src": "351:13:20",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
-                                                "typeString": "function (bytes32)"
-                                            }
-                                        },
-                                        "id": 4356,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "351:19:20",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_tuple$__$",
-                                            "typeString": "tuple()"
-                                        }
-                                    },
-                                    "id": 4357,
-                                    "nodeType": "EmitStatement",
-                                    "src": "346:24:20"
-                                }
-                            ]
-                        },
-                        "documentation": null,
-                        "id": 4359,
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "_submitHash",
-                        "nodeType": "FunctionDefinition",
-                        "parameters": {
-                            "id": 4352,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 4351,
-                                    "name": "hash",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 4359,
-                                    "src": "291:12:20",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_bytes32",
-                                        "typeString": "bytes32"
-                                    },
-                                    "typeName": {
-                                        "id": 4350,
-                                        "name": "bytes32",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "291:7:20",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_bytes32",
-                                            "typeString": "bytes32"
-                                        }
-                                    },
-                                    "value": null,
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "290:14:20"
-                        },
-                        "returnParameters": {
-                            "id": 4353,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "314:0:20"
-                        },
-                        "scope": 4360,
-                        "src": "270:107:20",
-                        "stateMutability": "nonpayable",
-                        "superFunction": null,
-                        "visibility": "internal"
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4349,
+            "name": "HashSubmitted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4348,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4347,
+                  "indexed": false,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4349,
+                  "src": "226:12:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4346,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "226:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
                     }
-                ],
-                "scope": 4361,
-                "src": "178:202:20"
-            }
-        ],
-        "src": "0:381:20"
-    },
-    "legacyAST": {
-        "absolutePath": "/Users/mikhail/Coding/erasure/contracts/modules/ProofHashes.sol",
-        "exportedSymbols": {
-            "ProofHashes": [4360]
-        },
-        "id": 4361,
-        "nodeType": "SourceUnit",
-        "nodes": [
-            {
-                "id": 4345,
-                "literals": ["solidity", "^", "0.5", ".13"],
-                "nodeType": "PragmaDirective",
-                "src": "0:24:20"
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "225:14:20"
             },
-            {
-                "baseContracts": [],
-                "contractDependencies": [],
-                "contractKind": "contract",
-                "documentation": "@title ProofHashes\n @author Stephane Gosselin (@thegostep) for Numerai Inc\n @dev Security contact: security@numer.ai\n @dev Version: 1.2.0",
-                "fullyImplemented": true,
-                "id": 4360,
-                "linearizedBaseContracts": [4360],
-                "name": "ProofHashes",
-                "nodeType": "ContractDefinition",
-                "nodes": [
-                    {
-                        "anonymous": false,
-                        "documentation": null,
-                        "id": 4349,
-                        "name": "HashSubmitted",
-                        "nodeType": "EventDefinition",
-                        "parameters": {
-                            "id": 4348,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 4347,
-                                    "indexed": false,
-                                    "name": "hash",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 4349,
-                                    "src": "226:12:20",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_bytes32",
-                                        "typeString": "bytes32"
-                                    },
-                                    "typeName": {
-                                        "id": 4346,
-                                        "name": "bytes32",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "226:7:20",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_bytes32",
-                                            "typeString": "bytes32"
-                                        }
-                                    },
-                                    "value": null,
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "225:14:20"
-                        },
-                        "src": "206:34:20"
+            "src": "206:34:20"
+          },
+          {
+            "body": {
+              "id": 4358,
+              "nodeType": "Block",
+              "src": "314:63:20",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4355,
+                        "name": "hash",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4351,
+                        "src": "365:4:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 4354,
+                      "name": "HashSubmitted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4349,
+                      "src": "351:13:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32)"
+                      }
                     },
-                    {
-                        "body": {
-                            "id": 4358,
-                            "nodeType": "Block",
-                            "src": "314:63:20",
-                            "statements": [
-                                {
-                                    "eventCall": {
-                                        "argumentTypes": null,
-                                        "arguments": [
-                                            {
-                                                "argumentTypes": null,
-                                                "id": 4355,
-                                                "name": "hash",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 4351,
-                                                "src": "365:4:20",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_bytes32",
-                                                    "typeString": "bytes32"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_bytes32",
-                                                    "typeString": "bytes32"
-                                                }
-                                            ],
-                                            "id": 4354,
-                                            "name": "HashSubmitted",
-                                            "nodeType": "Identifier",
-                                            "overloadedDeclarations": [],
-                                            "referencedDeclaration": 4349,
-                                            "src": "351:13:20",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
-                                                "typeString": "function (bytes32)"
-                                            }
-                                        },
-                                        "id": 4356,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "351:19:20",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_tuple$__$",
-                                            "typeString": "tuple()"
-                                        }
-                                    },
-                                    "id": 4357,
-                                    "nodeType": "EmitStatement",
-                                    "src": "346:24:20"
-                                }
-                            ]
-                        },
-                        "documentation": null,
-                        "id": 4359,
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "_submitHash",
-                        "nodeType": "FunctionDefinition",
-                        "parameters": {
-                            "id": 4352,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 4351,
-                                    "name": "hash",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 4359,
-                                    "src": "291:12:20",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_bytes32",
-                                        "typeString": "bytes32"
-                                    },
-                                    "typeName": {
-                                        "id": 4350,
-                                        "name": "bytes32",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "291:7:20",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_bytes32",
-                                            "typeString": "bytes32"
-                                        }
-                                    },
-                                    "value": null,
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "290:14:20"
-                        },
-                        "returnParameters": {
-                            "id": 4353,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "314:0:20"
-                        },
-                        "scope": 4360,
-                        "src": "270:107:20",
-                        "stateMutability": "nonpayable",
-                        "superFunction": null,
-                        "visibility": "internal"
+                    "id": 4356,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "351:19:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
                     }
-                ],
-                "scope": 4361,
-                "src": "178:202:20"
-            }
+                  },
+                  "id": 4357,
+                  "nodeType": "EmitStatement",
+                  "src": "346:24:20"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4359,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_submitHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4352,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4351,
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4359,
+                  "src": "291:12:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 4350,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "291:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "290:14:20"
+            },
+            "returnParameters": {
+              "id": 4353,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "314:0:20"
+            },
+            "scope": 4360,
+            "src": "270:107:20",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
         ],
-        "src": "0:381:20"
-    },
-    "compiler": {
-        "name": "solc",
-        "version": "0.5.13+commit.5b0b510c.Emscripten.clang",
-        "optimizer": false,
-        "runs": 200
-    },
-    "networks": {},
-    "schemaVersion": "2.2.0",
-    "updatedAt": "2019-12-03T12:04:31.611Z"
+        "scope": 4361,
+        "src": "178:202:20"
+      }
+    ],
+    "src": "0:381:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang",
+    "optimizer": false,
+    "runs": 200
+  },
+  "networks": {},
+  "schemaVersion": "2.2.0",
+  "updatedAt": "2019-12-03T12:04:31.611Z"
 }

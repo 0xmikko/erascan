@@ -21,23 +21,21 @@ const history = createBrowserHistory()
 const store = configureStore(history)
 
 if (!process.env.REACT_APP_GRAPHQL_ENDPOINT) {
-    throw new Error(
-        'REACT_APP_GRAPHQL_ENDPOINT environment variable not defined'
-    )
+  throw new Error('REACT_APP_GRAPHQL_ENDPOINT environment variable not defined')
 }
 
 const client = new ApolloClient({
-    uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
-    cache: new InMemoryCache(),
+  uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
+  cache: new InMemoryCache(),
 })
 
 ReactDOM.render(
-    <ApolloProvider client={client}>
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <App />
-            </ConnectedRouter>
-        </Provider>
-    </ApolloProvider>,
-    document.getElementById('root')
+  <ApolloProvider client={client}>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </Provider>
+  </ApolloProvider>,
+  document.getElementById('root')
 )

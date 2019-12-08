@@ -15,24 +15,24 @@ import formikRenderHOC from './FormRenderHOC'
 import * as statuses from '../../store/utils/status'
 
 const FormikForm = ({ fieldList, initialValues, onSubmit }) => {
-    const schemaPrep = {}
-    Object.entries(fieldList).map(x => (schemaPrep[x[0]] = x[1].validation))
+  const schemaPrep = {}
+  Object.entries(fieldList).map(x => (schemaPrep[x[0]] = x[1].validation))
 
-    const schema = yup.object({ ...schemaPrep })
-    return (
-        <Formik
-            validationSchema={schema}
-            onSubmit={onSubmit}
-            initialValues={{ ...initialValues }}
-            render={formikRenderHOC(fieldList)}
-        />
-    )
+  const schema = yup.object({ ...schemaPrep })
+  return (
+    <Formik
+      validationSchema={schema}
+      onSubmit={onSubmit}
+      initialValues={{ ...initialValues }}
+      render={formikRenderHOC(fieldList)}
+    />
+  )
 }
 
 FormikForm.propTypes = {
-    api: PropTypes.string.isRequired,
-    resource: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+  api: PropTypes.string.isRequired,
+  resource: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 }
 
 export default FormikForm

@@ -12,13 +12,13 @@ import thunk from 'redux-thunk'
 import { routerMiddleware } from 'react-router-redux'
 
 export default history => {
-    const composeEnhancers =
-        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+  const composeEnhancers =
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
-    return createStore(
-        rootReducer(history),
-        composeEnhancers(applyMiddleware(thunk, routerMiddleware(history)))
-    )
+  return createStore(
+    rootReducer(history),
+    composeEnhancers(applyMiddleware(thunk, routerMiddleware(history)))
+  )
 
-    // return configureStore;
+  // return configureStore;
 }
