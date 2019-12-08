@@ -9,10 +9,6 @@ package handlers
 import (
 	"github.com/MikaelLazarev/erascan/server/config"
 	"github.com/MikaelLazarev/erascan/server/handlers/accounts"
-	"github.com/MikaelLazarev/erascan/server/handlers/auth"
-	"github.com/MikaelLazarev/erascan/server/handlers/transactions"
-	"github.com/MikaelLazarev/erascan/server/handlers/users"
-	"github.com/MikaelLazarev/erascan/server/middlewares"
 	"github.com/MikaelLazarev/erascan/server/services"
 	"github.com/getsentry/sentry-go"
 	sentrygin "github.com/getsentry/sentry-go/gin"
@@ -53,20 +49,11 @@ func StartServer(services services.Services, port string) {
 		log.Println("Sentry service was started")
 	}
 
-	// Auth handlers
-	authRouter := router.Group("/auth")
-	auth.RegisterController(authRouter, services.UserService)
 
 	// Api handlers. Restricted area
 	apiRouter := router.Group("/api")
-	apiRouter.Use(middlewares.AuthHandler(services.UserService))
 	accounts.RegisterController(apiRouter, services.AccountsService)
-	transactions.RegisterController(apiRouter, services.TransactionsService)
-	users.RegisterController(apiRouter, services.UserService, services.NotificationService)
 
-	// External adapter check
-	adapter := router.Group("/adapter")
-	transactions.AdapterController(adapter)
 
 	// Temporary added to serve landing page
 

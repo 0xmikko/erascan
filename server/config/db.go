@@ -10,12 +10,11 @@ import (
 	"errors"
 	"fmt"
 	"os"
-	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 type DBConfig struct {
 	Host     string
+	Port     string
 	User     string
 	DBname   string
 	Password string
@@ -45,6 +44,7 @@ func getProdConfig() (*DBConfig, error) {
 
 	devConfig := &DBConfig{
 		Host:     os.Getenv("DB_HOST"),
+		Port:     os.Getenv("DB_PORT"),
 		DBname:   os.Getenv("DB_NAME"),
 		User:     os.Getenv("DB_USER"),
 		Password: os.Getenv("DB_PASSWORD")}
@@ -53,5 +53,5 @@ func getProdConfig() (*DBConfig, error) {
 }
 
 func (c DBConfig) String() string {
-	return fmt.Sprintf("mongodb+srv://%s:%s@%s/%s", c.User, c.Password, c.Host, c.DBname)
+	return fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s", c.Host, c.Port, c.User, c.DBname, c.Password)
 }

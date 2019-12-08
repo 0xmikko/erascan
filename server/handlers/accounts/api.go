@@ -18,7 +18,6 @@ func RegisterController(r gin.IRouter, as core.AccountsService) {
 	accountService = as
 
 	c := r.Group("/accounts/")
-	c.GET("/", ListHandler)
 	c.GET("/:id/", RetrieveHandler)
 	c.POST("/", CreateHandler)
 

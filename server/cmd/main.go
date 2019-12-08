@@ -7,12 +7,11 @@
 package main
 
 import (
-	"context"
 	"github.com/MikaelLazarev/erascan/server/config"
+	"github.com/MikaelLazarev/erascan/server/core"
 	"github.com/MikaelLazarev/erascan/server/handlers"
 	"github.com/MikaelLazarev/erascan/server/services"
 	"github.com/MikaelLazarev/erascan/server/store"
-	"github.com/MikaelLazarev/erascan/server/store/helpers"
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
@@ -35,15 +34,18 @@ func main() {
 		log.Fatal("Can't get DB Settings! %s", err)
 	}
 
-	// Connecting Mongo DB and defer disconnecting
-	mongoDB := helpers.Connect(dbConfig.String(), dbConfig.DBname)
-	defer mongoDB.Client.Disconnect(context.Background())
+	// Connecting Gorm DB and defer disconnecting
 
-	db, err := gorm.Open("postgres", "host=myhost port=myport user=gorm dbname=gorm password=mypassword")
-	defer db.Close()
+	gormDB, err := gorm.Open("postgres", dbConfig.String())
+	if err != nil {
+		log.Fatal("DB error connection! %s", err)
+	}
+
+	defer gormDB.Close()
+	gormDB.AutoMigrate(&core.Account{})
 
 	// Inject store
-	store := store.InjectStore(mongoDB.DB)
+	store := store.InjectStore(gormDB)
 
 	// Inject services
 	services := services.InjectServices(*store)

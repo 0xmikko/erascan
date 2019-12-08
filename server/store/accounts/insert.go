@@ -10,14 +10,11 @@ package accounts
 import (
 	"context"
 	"github.com/MikaelLazarev/erascan/server/core"
-	"github.com/MikaelLazarev/erascan/server/store/helpers"
 )
 
-func (s *store) Insert(ctx context.Context, account *core.Account) (AccountID core.ID, err error) {
-	account.ID = core.ID(account.Address)
+func (s *store) Insert(ctx context.Context, account *core.Account) error {
 
-	result, err := s.Col.InsertOne(context.Background(), account)
-	_, err = helpers.ConvertOIDToString(result.InsertedID)
+	db := s.DB.Create(account)
 
-	return account.ID, err
+	return db.Error
 }

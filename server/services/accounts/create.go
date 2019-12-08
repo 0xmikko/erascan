@@ -12,15 +12,12 @@ import (
 	"github.com/MikaelLazarev/erascan/server/core"
 )
 
-func (s *service) Create(ctx context.Context, userID core.ID, account string) error {
+func (s *service) Create(ctx context.Context, dto *core.AccountCreateDTO) error {
 
-	_, err := s.store.Insert(ctx, &core.Account{
-		ID:      core.ID(account),
-		Address: account,
-		Owner:   userID,
+	err := s.store.Insert(ctx, &core.Account{
+		Address: core.ID(dto.Address),
+		Name:    dto.Name,
 	})
-
-	go monitor(account, s.store, s.transactionsService)
 
 	return err
 

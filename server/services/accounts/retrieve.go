@@ -11,9 +11,9 @@ import (
 	"github.com/MikaelLazarev/erascan/server/core"
 )
 
-func (s *service) Retrieve(ctx context.Context, userID, accountID core.ID) (*core.Account, error) {
+func (s *service) Retrieve(ctx context.Context, ID core.ID) (*core.Account, error) {
 
-	account, err := s.store.FindByID(ctx, accountID)
+	account, err := s.store.FindByID(ctx, ID)
 	if err != nil {
 		return nil, err
 	}
@@ -21,3 +21,4 @@ func (s *service) Retrieve(ctx context.Context, userID, accountID core.ID) (*cor
 	return account, nil
 
 }
+

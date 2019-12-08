@@ -14,15 +14,12 @@ import (
 	"net/http"
 )
 
-type CreateAccountDTO struct {
-	Account string `json:"account"`
-}
+
 
 func CreateHandler(c *gin.Context) {
 
-	var accountDTO CreateAccountDTO
+	var accountDTO core.AccountCreateDTO
 
-	userID := c.MustGet("userId").(core.ID)
 	err := c.BindJSON(&accountDTO)
 	if err != nil {
 		log.Println(err)
@@ -30,20 +27,13 @@ func CreateHandler(c *gin.Context) {
 		return
 	}
 
-	err = accountService.Create(context.TODO(), userID, accountDTO.Account)
+	err = accountService.Create(context.TODO(), &accountDTO)
 	if err != nil {
 		log.Println(err)
 		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 
-	accountsList, err := accountService.ListByUser(context.TODO(), userID)
-	if err != nil {
-		log.Println(err)
-		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
-
-	c.JSON(http.StatusCreated, gin.H{"data": accountsList})
+	c.JSON(http.StatusCreated, gin.H{"data": true})
 
 }

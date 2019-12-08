@@ -14,21 +14,24 @@ import (
 
 type (
 	Account struct {
-		ID      ID     `json:"id"`
-		Address string `json:"address"`
-		Owner   string `json:"owner"`
+		Address ID     `gorm:"unique;not null" json:"id"`
+		Name    string `json:"owner"`
 		gorm.Model
 	}
 
-	AccountsStore interface {
-		// Stores account obj and return account ID
-		Insert(ctx context.Context, account *Account) (accountID ID, err error)
+	AccountCreateDTO struct {
+		Address string `json:"account"`
+		Name    string `json:"name"`
+	}
 
+	AccountsStore interface {
+		// Stores account obj and return account Address
+		Insert(ctx context.Context, account *Account) error
 		FindByID(ctx context.Context, accountID ID) (*Account, error)
 	}
 
 	AccountsService interface {
-		Create(ctx context.Context, address, account string) error
+		Create(ctx context.Context, dto *AccountCreateDTO) error
 		Retrieve(ctx context.Context, address ID) (*Account, error)
 	}
 )

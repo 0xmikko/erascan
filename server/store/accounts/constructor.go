@@ -8,19 +8,19 @@ package accounts
 
 import (
 	"github.com/MikaelLazarev/erascan/server/core"
-	"go.mongodb.org/mongo-driver/mongo"
+	"github.com/jinzhu/gorm"
 )
 
-const collection = "accounts"
+const table = "accounts"
 
 type store struct {
-	DB  *mongo.Database
-	Col *mongo.Collection
+	DB  *gorm.DB
+	Table string
 }
 
 // NewStore - creates New store
-func New(dbase *mongo.Database) core.AccountsStore {
+func New(dbase *gorm.DB) core.AccountsStore {
 
 	// Migrate model
-	return &store{dbase, dbase.Collection(collection)}
+	return &store{dbase, table}
 }
