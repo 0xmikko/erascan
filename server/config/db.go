@@ -10,6 +10,8 @@ import (
 	"errors"
 	"fmt"
 	"os"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 type DBConfig struct {

@@ -8,8 +8,8 @@ package accounts
 
 import (
 	"context"
-	"github.com/MikaelLazarev/cerberus/server/config"
-	"github.com/MikaelLazarev/cerberus/server/core"
+	"github.com/MikaelLazarev/erascan/server/config"
+	"github.com/MikaelLazarev/erascan/server/core"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"io/ioutil"
 	"log"

@@ -5,9 +5,8 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-import React from "react";
-import {Button, Modal} from "react-bootstrap";
-
+import React from 'react'
+import { Button, Modal } from 'react-bootstrap'
 
 function Confirmation(props) {
     return (
@@ -25,8 +24,7 @@ function Confirmation(props) {
                 </Button>
             </Modal.Footer>
         </Modal>
-    );
+    )
 }
 
-
-export default Confirmation;
+export default Confirmation

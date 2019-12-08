@@ -10,7 +10,7 @@ package accounts
 import (
 	"context"
 	"encoding/hex"
-	"github.com/MikaelLazarev/cerberus/server/core"
+	"github.com/MikaelLazarev/erascan/server/core"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"log"

@@ -8,7 +8,7 @@ package accounts
 
 import (
 	"context"
-	"github.com/MikaelLazarev/cerberus/server/core"
+	"github.com/MikaelLazarev/erascan/server/core"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )

@@ -5,21 +5,17 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-import React from "react";
+import React from 'react'
 
-import WindowWidget from "../../components/WindowWidget";
-import ButtonLink from "../../components/ButtonLink";
+import WindowWidget from '../../components/WindowWidget'
+import ButtonLink from '../../components/ButtonLink'
 
+export const InfoWidget = props => {
+    const rightToolbar = (
+        <ButtonLink to={'/' + props.id + '/edit'} title={'Edit'} />
+    )
 
+    return <WindowWidget title={'Last Feeds'}>Feed Widget</WindowWidget>
+}
 
-export const InfoWidget = (props) => {
-
-    const rightToolbar = <ButtonLink to={"/" + props.id + "/edit"} title={"Edit"} />;
-
-    return  <WindowWidget title={"Last Feeds"}>
-                Feed Widget
-            </WindowWidget>
-
-};
-
-export default InfoWidget;
+export default InfoWidget

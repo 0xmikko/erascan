@@ -7,13 +7,17 @@
 
 package core
 
-import "context"
+import (
+	"context"
+	"github.com/jinzhu/gorm"
+)
 
 type (
 	Account struct {
 		ID      ID     `json:"id"`
 		Address string `json:"address"`
 		Owner   string `json:"owner"`
+		gorm.Model
 	}
 
 	AccountsStore interface {

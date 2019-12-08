@@ -9,7 +9,7 @@ package accounts
 
 import (
 	"context"
-	"github.com/MikaelLazarev/cerberus/server/core"
+	"github.com/MikaelLazarev/erascan/server/core"
 	"github.com/ethereum/go-ethereum"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"

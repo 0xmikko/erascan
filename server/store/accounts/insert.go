@@ -9,8 +9,8 @@ package accounts
 
 import (
 	"context"
-	"github.com/MikaelLazarev/cerberus/server/core"
-	"github.com/MikaelLazarev/cerberus/server/store/helpers"
+	"github.com/MikaelLazarev/erascan/server/core"
+	"github.com/MikaelLazarev/erascan/server/store/helpers"
 )
 
 func (s *store) Insert(ctx context.Context, account *core.Account) (AccountID core.ID, err error) {

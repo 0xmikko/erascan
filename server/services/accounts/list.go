@@ -9,7 +9,7 @@ package accounts
 
 import (
 	"context"
-	"github.com/MikaelLazarev/cerberus/server/core"
+	"github.com/MikaelLazarev/erascan/server/core"
 )
 
 func (s *service) ListByUser(ctx context.Context, userID core.ID) (result []*core.Account, err error) {

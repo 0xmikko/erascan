@@ -5,18 +5,16 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-import React, {Component} from "react";
+import React, { Component } from 'react'
 
-
-const TableSubHeader = (props) => (
-
+const TableSubHeader = props => (
     <tr>
-        <td colSpan={props.colSpan}n align={props.align}>
+        <td colSpan={props.colSpan} n align={props.align}>
             <strong>
                 <h4>{props.header}</h4>
             </strong>
         </td>
     </tr>
-);
+)
 
 export default TableSubHeader

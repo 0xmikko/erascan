@@ -7,12 +7,12 @@
 package services
 
 import (
-	"github.com/MikaelLazarev/cerberus/server/core"
-	"github.com/MikaelLazarev/cerberus/server/services/accounts"
-	"github.com/MikaelLazarev/cerberus/server/services/notifications"
-	"github.com/MikaelLazarev/cerberus/server/services/transactions"
-	"github.com/MikaelLazarev/cerberus/server/services/users"
-	"github.com/MikaelLazarev/cerberus/server/store"
+	"github.com/MikaelLazarev/erascan/server/core"
+	"github.com/MikaelLazarev/erascan/server/services/accounts"
+	"github.com/MikaelLazarev/erascan/server/services/notifications"
+	"github.com/MikaelLazarev/erascan/server/services/transactions"
+	"github.com/MikaelLazarev/erascan/server/services/users"
+	"github.com/MikaelLazarev/erascan/server/store"
 )
 
 type Services struct {

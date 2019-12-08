@@ -7,7 +7,7 @@
 package accounts
 
 import (
-	"github.com/MikaelLazarev/cerberus/server/core"
+	"github.com/MikaelLazarev/erascan/server/core"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

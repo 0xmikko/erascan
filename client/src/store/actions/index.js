@@ -6,9 +6,9 @@
  */
 
 export {
-  getWeb3,
-  deployContract,
-  depositLinks,
-  depositMoney,
-  sendMoney,
-} from './web3';
+    getWeb3,
+    deployContract,
+    depositLinks,
+    depositMoney,
+    sendMoney,
+} from './web3'

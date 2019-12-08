@@ -7,11 +7,8 @@
 package store
 
 import (
-	"github.com/MikaelLazarev/cerberus/server/core"
-	"github.com/MikaelLazarev/cerberus/server/store/accounts"
-	"github.com/MikaelLazarev/cerberus/server/store/notifications"
-	"github.com/MikaelLazarev/cerberus/server/store/transactions"
-	"github.com/MikaelLazarev/cerberus/server/store/users"
+	"github.com/MikaelLazarev/erascan/server/core"
+	"github.com/MikaelLazarev/erascan/server/store/accounts"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

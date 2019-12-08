@@ -8,7 +8,7 @@ package accounts
 
 import (
 	"context"
-	"github.com/MikaelLazarev/cerberus/server/core"
+	"github.com/MikaelLazarev/erascan/server/core"
 )
 
 func (s *service) Retrieve(ctx context.Context, userID, accountID core.ID) (*core.Account, error) {

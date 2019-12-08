@@ -5,53 +5,53 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-import React, {Component} from "react";
-import PropTypes from 'prop-types';
-import {connect} from "react-redux";
-import {Button, Modal} from "react-bootstrap";
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Button, Modal } from 'react-bootstrap'
 // import * as actions from "../store/actions/modals";
-import * as reducers from "../store/reducers";
-import * as status from "../status";
-
+import * as reducers from '../store/reducers'
+import * as status from '../status'
 
 class Confirmation extends Component {
-
     state = {
-        hash: 0
-    };
+        hash: 0,
+    }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-
-        const hash = this.state.hash;
-        if (hash === 0) return;
+        const hash = this.state.hash
+        if (hash === 0) return
         if (this.props.hashUpdates[hash] !== undefined) {
-            this.setState({ hash: 0});
-            console.log("C-M2", this.props);
-            if ((this.props.confirmation.data) && (this.props.confirmation.data.updateData)) this.props.confirmation.data.updateData();
+            this.setState({ hash: 0 })
+            console.log('C-M2', this.props)
+            if (
+                this.props.confirmation.data &&
+                this.props.confirmation.data.updateData
+            )
+                this.props.confirmation.data.updateData()
         }
     }
 
-    handleClose =() => {
-        this.props.hideConfirmation();
-    };
+    handleClose = () => {
+        this.props.hideConfirmation()
+    }
 
     onAction = () => {
-        this.handleClose();
-        const hash = this.props.confirmation.data.hashPrefix  + Date();
-        this.setState({status: status.STATUS_LOADING, hash: hash});
+        this.handleClose()
+        const hash = this.props.confirmation.data.hashPrefix + Date()
+        this.setState({ status: status.STATUS_LOADING, hash: hash })
         this.props.confirmation.data.onAction(hash)
-    };
+    }
 
     render() {
-
-        console.log("C-M", this.props.confirmation);
+        console.log('C-M', this.props.confirmation)
         if (!this.props.confirmation) {
-            return "";
+            return ''
         }
 
-        if (!this.props.confirmation.data) return "";
-        const data = this.props.confirmation.data;
-        const show = this.props.confirmation.show;
+        if (!this.props.confirmation.data) return ''
+        const data = this.props.confirmation.data
+        const show = this.props.confirmation.show
 
         return (
             <Modal show={show}>
@@ -68,25 +68,23 @@ class Confirmation extends Component {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        );
+        )
     }
 }
 
 Confirmation.propTypes = {
-
     confirmation: PropTypes.object,
     action: PropTypes.func.isRequired,
-    hideConfirmation: PropTypes.func.isRequired
-};
+    hideConfirmation: PropTypes.func.isRequired,
+}
 
-
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
     // confirmation: getConfirmation(state),
     // hashUpdates: getHashUpdates(state),
-});
+})
 
 const mapDispatchToProps = dispatch => ({
-     // hideConfirmation: () => dispatch(actions.hideConfirmation())
-});
+    // hideConfirmation: () => dispatch(actions.hideConfirmation())
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Confirmation);
+export default connect(mapStateToProps, mapDispatchToProps)(Confirmation)

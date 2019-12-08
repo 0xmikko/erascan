@@ -14,6 +14,8 @@ import (
 	"github.com/MikaelLazarev/erascan/server/store"
 	"github.com/MikaelLazarev/erascan/server/store/helpers"
 	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"log"
 	"os"
 )
@@ -36,6 +38,9 @@ func main() {
 	// Connecting Mongo DB and defer disconnecting
 	mongoDB := helpers.Connect(dbConfig.String(), dbConfig.DBname)
 	defer mongoDB.Client.Disconnect(context.Background())
+
+	db, err := gorm.Open("postgres", "host=myhost port=myport user=gorm dbname=gorm password=mypassword")
+	defer db.Close()
 
 	// Inject store
 	store := store.InjectStore(mongoDB.DB)
