@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 import getWeb3util from '../utils/getweb3';
 import * as actionTypes from './actionTypes';
 import ErasureContract from '../../contracts/Erasure_Posts.json';

@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Button, Container, Modal } from "react-bootstrap";
@@ -8,7 +15,7 @@ import FormikForm from "./FormikForm";
 
 
 class FormikModal extends Component {
-    
+
 
     handleClose =() => {
         const { formId } = this.props;

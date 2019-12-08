@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 import {RSAA} from 'redux-api-middleware';
 import {getApiById} from '../utils/api';
 import {withAuth} from '../reducers';

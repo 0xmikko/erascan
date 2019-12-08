@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 import { BACKEND_ADDR } from '../../config';
 
 export const getFullAPIAddress = (url, params) => {

@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 import {updateState} from '../utils/updateState';
 import * as actionTypes from '../actions/actionTypes';
 import * as status from '../utils/status';

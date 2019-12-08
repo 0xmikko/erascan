@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Col, Row, Container } from "react-bootstrap";

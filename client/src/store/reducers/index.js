@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 import {combineReducers} from 'redux';
 import {connectRouter} from 'connected-react-router';
 import web3, * as fromWeb3 from './web3';

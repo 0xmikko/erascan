@@ -1,3 +1,10 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
 // DATA LOADING
 export const LIST_REQUEST = 'LIST_REQUEST';
 export const LIST_UPDATE = 'LIST_UPDATE';
