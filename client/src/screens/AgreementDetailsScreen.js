@@ -7,28 +7,28 @@
 
 import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
-
-import PostDetailsWidget from '../containers/Hashes/PostDetailsWidget'
 import {Helmet} from "react-helmet";
 
-const PostDetailsScreen = ({
+import AgreementDetailsWidget from "../containers/Agreements/AgreementDetailsWidget";
+
+const AgreementDetailsScreen = ({
   match: {
     params: { id },
   },
 }) => (
   <>
     <Helmet>
-      <title>Post {id}</title>
+      <title>Agreement {id}</title>
     </Helmet>
     <Container fluid={true}>
       <Row style={{ marginTop: 40 }}>
         <Col sm={12}>
-          <h1>Post {id}</h1>
-          <PostDetailsWidget id={id} />
+          <h1 style={{marginBottom: 20}}>Agreement {id}</h1>
+          <AgreementDetailsWidget id={id} />
         </Col>
       </Row>
     </Container>
   </>
 )
 
-export default PostDetailsScreen
+export default AgreementDetailsScreen

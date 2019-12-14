@@ -14,13 +14,13 @@ import { Link } from 'react-router-dom'
 import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import * as moment from 'moment'
-import QueryWrap from "../../components/QueryWrap";
-import AgreementsListComponent from "./AgreementsListComponent";
+import QueryWrap from '../../components/QueryWrap'
+import AgreementsListComponent from './AgreementsListComponent'
 
 const GRAPH_QUERY = gql`
-  {
+  query($search: String){
     countdownGriefingEscrows(
-      first: 20
+      where: { creator: $search }
       orderBy: createdTimestamp
       orderDirection: desc
     ) {
@@ -51,11 +51,13 @@ const GRAPH_QUERY = gql`
   }
 `
 
-export const AgreementsListTop20Widget = () => {
+export const AgreementsListTop20Widget = ({ search }) => {
   return (
-
-        <AgreementsListComponent query={GRAPH_QUERY} title={'Last 20 Agreements'}/>
-
+    <AgreementsListComponent
+      query={GRAPH_QUERY}
+      title={`Agreements found`}
+      variables={{ search }}
+    />
   )
 }
 

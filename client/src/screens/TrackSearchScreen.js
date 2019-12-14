@@ -9,14 +9,13 @@ import React, { useEffect } from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
 import TrackSearchBarWidget from '../containers/SearchBarWidget/TrackSearchBarWidget'
-import PostsListLast20Widget from '../containers/Hashes/PostsListLast20Widget'
-import FeedWidget from '../containers/Feeds/FeedsListLast20Widget'
+import FeedSearchWidget from '../containers/Feeds/FeedsListSearchWidget'
 import { Helmet } from 'react-helmet'
 
-const TrackScreen = ({history}) => (
+const TrackSearchScreen = ({history, match: { params: {search}}}) => (
   <>
     <Helmet>
-      <title>Track & record</title>
+      <title>Track Search Results</title>
     </Helmet>
     <Container fluid={true}>
       <Row style={{ marginTop: 40 }}>
@@ -26,11 +25,11 @@ const TrackScreen = ({history}) => (
       </Row>
       <Row style={{ marginTop: 20 }}>
         <Col sm={12}>
-          <FeedWidget />
+          <FeedSearchWidget search={search}/>
         </Col>
       </Row>
     </Container>
   </>
 )
 
-export default TrackScreen
+export default TrackSearchScreen

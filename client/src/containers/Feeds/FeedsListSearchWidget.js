@@ -14,29 +14,27 @@ import { Link } from 'react-router-dom'
 import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import * as moment from 'moment'
-import QueryWrap from '../../components/QueryWrap'
-import PostListComponent from './PostListComponent'
+import FeedListComponent from './FeedListComponent'
 const GRAPH_QUERY = gql`
-  query postsByFeed($id: String!) {
-    posts(feed: $id, orderBy: createdTimestamp, orderDirection: desc) {
+  query search($search: String) {
+    feeds(where: { creator: $search }) {
       id
       creator
       operator
-      staticMetadataB58
-      proofHash
-      createdTimestamp
+      hashes
     }
   }
 `
 
-export const PostsListByFeedWidget = ({ id }) => {
+export const FeedsListSearchWidget = ({ search }) => {
+  console.log(search)
   return (
-    <WindowWidget title={'Posts by ' + id}>
-      <QueryWrap query={GRAPH_QUERY} variables={{ id }}>
-        <PostListComponent />
-      </QueryWrap>
-    </WindowWidget>
+    <FeedListComponent
+      title={'Search results'}
+      query={GRAPH_QUERY}
+      variables={{ search }}
+    />
   )
 }
 
-export default PostsListByFeedWidget
+export default FeedsListSearchWidget

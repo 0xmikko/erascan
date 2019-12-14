@@ -5,48 +5,36 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-/*
- * Erascan - erasure protocol explorer
- * https://github.com/MikaelLazarev/erascan
- *
- * Copyright (c) 2019. Mikael Lazarev
- */
 import React from 'react'
 import { Table } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import * as moment from 'moment'
-import AddressLink from "../Address/AddressLink";
 
-export default ({ data: { feeds } }) => (
-    <Table style={{ margin: 0 }}>
-        <tbody>
-        {feeds.map(e => (
-            <tr key={e.id}>
-                <td width={'50%'}>
-                    <Link to={'/post/' + e.id}>
-                        <div style={{ fontSize: '14px' }}>{e.id.substr(0, 20)}...</div>
-                    </Link>
-                    <div
-                        style={{
-                            fontSize: '11px',
-                            color: '#A808A96',
-                        }}
-                    >
-                        {moment(1000 * parseInt(e.createdTimestamp)).fromNow()}
-                    </div>
-                </td>
-                <td align={'right'}>
-                    <AddressLink id={e.creator} prefix={'Author'} />
+import AddressLink from '../Address/AddressLink'
+import WindowWidget from '../../components/WindowWidget'
+import QueryWrap from '../../components/QueryWrap'
+import EthLink from '../../components/EthLink'
+import { fromNow } from '../../utils/humandate'
+import ListWidget from '../../components/Widgets/ListWidget'
+import FeedLink from "./FeedLink";
 
-                    <div style={{ fontSize: '14px' }}>
-                        Author <a href={''}>{e.creator.substr(0, 20)}...</a>
-                    </div>
-                    <div style={{ fontSize: '14px' }}>
-                        Feed <a href={''}>{e.creator.substr(0, 20)}...</a>
-                    </div>
-                </td>
-            </tr>
-        ))}
-        </tbody>
-    </Table>
+const renderItem = e => (
+  <tr key={e.id}>
+    <td width={'50%'}>
+      <FeedLink id={e.id} />
+      <div className={'TimeFont'}>{fromNow(e.createdTimestamp)}</div>
+    </td>
+    <td align={'right'}>
+      <AddressLink id={e.creator} prefix={'Author'} />
+      <AddressLink id={e.creator} prefix={'Feed'} />
+    </td>
+  </tr>
+)
+
+export default ({ query, title, variables }) => (
+  <ListWidget
+    title={title}
+    query={query}
+    variables={variables}
+    itemName={'feeds'}
+    renderItem={renderItem}
+  />
 )

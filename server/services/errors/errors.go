@@ -10,13 +10,7 @@ package errors
 import "errors"
 
 var (
-	ErrorUserNotFound           = errors.New("User Not Found")
-	ErrorUserWithUsernameExists = errors.New("User with this username exists")
-	ErrorRefreshTokenIsNotValid = errors.New("Refresh token is not valid")
-	ErrorSignUp                 = errors.New("SignUpError")
-	ErrorCantCreateAccounts     = errors.New("Cant create account")
-	ErrorTransactionNotFound    = errors.New("Transaction not found")
-	ErrorCantConfirmCancelled   = errors.New("Cant confirm cancelled transaction")
+	ErrorCantFulFill			= errors.New("You can fulfill your address only once per 24h")
 	ErrorDBError                = errors.New("Database error")
 	ErrorHaveNoRights           = errors.New("You have no rights for this operation")
 )

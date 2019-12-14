@@ -1,0 +1,58 @@
+/*
+ * Erascan - erasure protocol explorer
+ * https://github.com/MikaelLazarev/erascan
+ *
+ * Copyright (c) 2019. Mikael Lazarev
+ */
+
+import React from 'react'
+import { Table } from 'react-bootstrap'
+import { gql } from 'apollo-boost'
+import AddressLink from '../../containers/Address/AddressLink'
+import WindowWidget from '../WindowWidget'
+import QueryWrap from '../QueryWrap'
+
+const renderValue = (item, type, field) => {
+  switch (type) {
+    default:
+    case 'String':
+      return item[field]
+    case 'Address':
+      return <AddressLink id={item[field]} />
+  }
+}
+
+const RenderItem = ({ data, itemName, fields }) => {
+  const item = data[itemName]
+
+  const info = fields.map(e => (
+    <tr>
+      <td width={'50%'}>{e.name}</td>
+      <td align={'right'}>{renderValue(item, e.type, e.field)}</td>
+    </tr>
+  ))
+
+  return (
+    <Table style={{ margin: 0 }}>
+      <tbody>{info}</tbody>
+    </Table>
+  )
+}
+
+export default ({ id, fields, itemName }) => {
+  const fieldsLine = fields.map(e => e.field).join('\n')
+  const graphQuery = gql`
+  query getItem($id: String!) {
+    ${itemName}(id: $id) {
+     ${fieldsLine}
+    }
+  }
+`
+  return (
+    <WindowWidget>
+      <QueryWrap query={graphQuery} variables={{ id }}>
+        <RenderItem fields={fields} itemName={itemName} />
+      </QueryWrap>
+    </WindowWidget>
+  )
+}

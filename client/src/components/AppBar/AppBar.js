@@ -47,7 +47,7 @@ const AppBar = props => {
                 <Link to={'/stat/'}>Statistics</Link>
               </Nav.Item>
               <Form inline />
-              <NavDropdown title="Mainnet" id="basic-nav-dropdown" alignRight>
+              <NavDropdown title="Rinkeby" id="basic-nav-dropdown" alignRight>
                 <NavDropdown.Item onClick={props.onLogout}>
                   Logout
                 </NavDropdown.Item>

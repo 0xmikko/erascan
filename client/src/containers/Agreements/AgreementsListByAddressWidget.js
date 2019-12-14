@@ -14,49 +14,40 @@ import { Link } from 'react-router-dom'
 import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import * as moment from 'moment'
-import QueryWrap from "../../components/QueryWrap";
-import AgreementsListComponent from "./AgreementsListComponent";
+import QueryWrap from '../../components/QueryWrap'
+import AgreementsListComponent from './AgreementsListComponent'
 
 const GRAPH_QUERY = gql`
-  {
-    countdownGriefingEscrows(
-      first: 20
+  query agreements($operator){
+  
+    oneWayGriefingAgreements(
+      operator: $operator
       orderBy: createdTimestamp
       orderDirection: desc
     ) {
       id
       creator
+      staker
+      counterparty
       operator
-      buyer
-      seller
-      paymentAmount
-      stakeAmount
-      countdownLength
-      agreementParams
-      deadline
-      data
-      dataB58
-      dataSubmitted
-      paymentDeposited
-      stakeDeposited
-      finalized
-      cancelled
-      metadata
-      metadataB58
-      initMetadata
-      initMetadataB58
-      initCallData
+      ratio
+      ratioType
+      stake
+      token
+      staticMetadataB58
       createdTimestamp
     }
   }
 `
 
-export const AgreementsListTop20Widget = () => {
+export const AgreementsListByAddressWidget = ({id}) => {
   return (
-
-        <AgreementsListComponent query={GRAPH_QUERY} title={'Last 20 Agreements'}/>
-
+    <WindowWidget title={'Agreements'}>
+      <QueryWrap query={GRAPH_QUERY} variables={{operator: id}}>
+        <AgreementsListComponent />
+      </QueryWrap>
+    </WindowWidget>
   )
 }
 
-export default AgreementsListTop20Widget
+export default AgreementsListByAddressWidget

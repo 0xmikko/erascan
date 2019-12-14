@@ -31,39 +31,44 @@ export default () => (
             Erascan 2019 © Mikhail Lazarev, All rights reserved
           </Col>
           <Col sm={6} lg={3}>
-            <div style={{marginTop: 0}}>
+            <div style={{ marginTop: 0 }}>
               <a
-                  href="http://t.me/mikael_l"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                href="http://t.me/mikael_l"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Policy
               </a>
               <br />
-            <a
-              href="http://t.me/mikael_l"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Documentation
-            </a>
-            <br />
-            <a href="https://erasure.xxx" target="_blank">
-              Erasure protocol
-            </a>
+              <a
+                href="http://t.me/mikael_l"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Documentation
+              </a>
+              <br />
+              <a href="https://erasure.xxx" target="_blank">
+                Erasure protocol
+              </a>
             </div>
           </Col>
           <Col sm={6} lg={3}>
-
-              <a href="https://erasure.xxx" target="_blank">
-                Contact
-              </a><br />
-            <div style={{marginTop: 20}}>
-            <a href="https://github.com/MikaelLazarev/erascan" >
-              <FontAwesomeIcon icon={['fab', 'github']} size={'lg'}  color={'black'}/>
-            </a>{'    '}
-              <a href="https://github.com/MikaelLazarev/erascan" >
-                <FontAwesomeIcon icon={['fab', 'telegram']} size={'lg'}  />
+            <a href="https://erasure.xxx" target="_blank">
+              Contact
+            </a>
+            <br />
+            <div style={{ marginTop: 20 }}>
+              <a href="https://github.com/MikaelLazarev/erascan">
+                <FontAwesomeIcon
+                  icon={['fab', 'github']}
+                  size={'lg'}
+                  color={'black'}
+                />
+              </a>
+              {'    '}
+              <a href="https://github.com/MikaelLazarev/erascan">
+                <FontAwesomeIcon icon={['fab', 'telegram']} size={'lg'} />
               </a>
             </div>
           </Col>

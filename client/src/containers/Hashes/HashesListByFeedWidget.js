@@ -17,29 +17,26 @@ import * as moment from 'moment'
 import QueryWrap from '../../components/QueryWrap'
 import PostListComponent from './PostListComponent'
 const GRAPH_QUERY = gql`
-    query postsByAddress($feedid: String) {
-      posts(where: { feed: $feedid}, orderBy: createdTimestamp, orderDirection: desc) {
-        id
-        creator
-        operator
-        staticMetadataB58
-        proofHash
-        createdTimestamp
-      }
+  query postsByFeed($id: String!) {
+    posts(feed: $id, orderBy: createdTimestamp, orderDirection: desc) {
+      id
+      creator
+      operator
+      staticMetadataB58
+      proofHash
+      createdTimestamp
     }
+  }
 `
 
-export const PostsListByAddressWidget = props => {
+export const HashesListByFeedWidget = ({ id }) => {
   return (
-    <WindowWidget title={'Posts by '}>
-      <QueryWrap
-        query={GRAPH_QUERY}
-        variables={{ $feedid: '0x53188c43cb6bd34c3d888cd373721071e0e542fe' }}
-      >
+    <WindowWidget title={'Posts by ' + id}>
+      <QueryWrap query={GRAPH_QUERY} variables={{ id }}>
         <PostListComponent />
       </QueryWrap>
     </WindowWidget>
   )
 }
 
-export default PostsListByAddressWidget
+export default HashesListByFeedWidget

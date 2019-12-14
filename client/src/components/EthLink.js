@@ -7,7 +7,11 @@
 
 import React from 'react'
 import { connect } from 'redux'
-import EthLink from "../../components/EthLink";
 
-export default ({ id, label }) => <EthLink prefix={'/address/'} label={label} id={id} />
+export default ({ id, label, prefix, shorten }) => (
+  <div style={{ fontSize: '14px' }}>
+    {label} <a href={prefix + id}>{id}</a>
+  </div>
+)
 
+//{shorten ? id.substr(0, 20) + '...': id}

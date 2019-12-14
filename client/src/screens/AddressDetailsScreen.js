@@ -8,14 +8,13 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { Col, Row, Container } from 'react-bootstrap'
+import {Helmet} from "react-helmet";
 
-import PageHeader from '../components/PageHeader'
-import SearchBarWidget from '../containers/SearchBar/SearchBarWidget'
-import PostsListWidget from '../containers/Posts/PostsListLast20Widget'
+import PostsListByAddressWidget from '../containers/Hashes/PostsListByAddressWidget'
+import FeedsListByAddressWidget from '../containers/Feeds/FeedsListByAddressWidget'
 
-import { isDataLoaded } from '../components/isDataLoaded'
-import * as actions from '../store/actions'
-import * as reducers from '../store/reducers'
+
+
 
 const FeedDetailsScreen = ({
   clientDetails,
@@ -25,29 +24,21 @@ const FeedDetailsScreen = ({
 }) => {
   const { id, tab } = match.params
 
-  // useEffect(() => {
-  //   getClientDetails(id);
-  // }, [id]);
-  //
-  // if (!clientDetails) return "Loading";
-  // const notReadyStatus = isDataLoaded(clientDetails[id]);
-  // if (notReadyStatus) {
-  //   return notReadyStatus;
-  // }
-  //
-  // const { data } = clientDetails[id];
-  // console.log(id, data);
-  // const { avatar_url, first_name, last_name } = data.profile.data;
-  const avatar_url = ''
-  const data = ''
+
 
   return (
     <>
+      <Helmet>
+        <title>Address {id}</title>
+      </Helmet>
       <Container style={{ marginTop: 20 }}>
-        <h1>Post {id}</h1>
+        <h1>Address {id}</h1>
         <Row>
           <Col sm={12}>
-            <PostsListWidget data={data} resource={'clients'} id={id} />
+            <PostsListByAddressWidget id={id} />
+          </Col>
+          <Col sm={12}>
+            <FeedsListByAddressWidget id={id} />
           </Col>
         </Row>
       </Container>

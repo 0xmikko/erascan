@@ -12,7 +12,7 @@ export default ({ query, variables, children }) => (
   <Query query={query} variables={variables}>
     {({ data, error, loading }) => {
       if (error) {
-        return error
+        return error.toString()
       }
 
       if (loading) {

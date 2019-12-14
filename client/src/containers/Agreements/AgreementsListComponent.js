@@ -6,24 +6,42 @@
  */
 import React from 'react'
 import { Table } from 'react-bootstrap'
-import AddressLink from '../Address/AddressLink'
 import { fromNow } from '../../utils/humandate'
+import EthLink from '../../components/EthLink'
+import WindowWidget from '../../components/WindowWidget'
+import QueryWrap from '../../components/QueryWrap'
+import ListWidget from '../../components/Widgets/ListWidget'
 
-export default ({ data: { oneWayGriefingAgreements } }) => (
-  <Table style={{ margin: 0 }}>
-    <tbody>
-      {oneWayGriefingAgreements.map(e => (
-        <tr key={e.id}>
-          <td width={'50%'}>
-            <AddressLink id={e.id} />
-            <div className={'TimeFont'}>{fromNow(e.createdTimestamp)}</div>
-          </td>
-          <td align={'right'}>
-            <AddressLink id={e.creator} prefix={'Feed'} />
-            <AddressLink id={e.operator} prefix={'Operator'} />
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </Table>
+const renderItem = e => (
+  <tr key={e.id}>
+    <td width={'50%'}>
+      <EthLink id={e.id} prefix={'/agreement/'} />
+      <div className={'TimeFont'}>{fromNow(e.createdTimestamp)}</div>
+    </td>
+    <td align={'right'}>
+      <EthLink
+        id={e.creator}
+        label={'Feed'}
+        prefix={'/address/'}
+        shorten={false}
+      />
+      <EthLink
+        id={e.operator}
+        label={'Operator'}
+        prefix={'/address/'}
+        shorten={true}
+      />
+    </td>
+  </tr>
+)
+
+
+export default ({ query, title, variables }) => (
+  <ListWidget
+    title={title}
+    query={query}
+    variables={variables}
+    itemName={'countdownGriefingEscrows'}
+    renderItem={renderItem}
+  />
 )
