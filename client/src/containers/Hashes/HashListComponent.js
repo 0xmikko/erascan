@@ -5,13 +5,10 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 import React from 'react'
-import { Table } from 'react-bootstrap'
 import AddressLink from '../Address/AddressLink'
-import PostLink from './PostLink'
 import { fromNow } from '../../utils/humandate'
 import EthLink from "../../components/EthLink";
-import WindowWidget from "../../components/WindowWidget";
-import QueryWrap from "../../components/QueryWrap";
+import ListWidget from "../../components/Widgets/ListWidget";
 
 const renderItem = e => (
   <tr key={e.id}>
@@ -27,16 +24,12 @@ const renderItem = e => (
 )
 
 
-const PostsList = ({ data: { posts } }) => (
-  <Table style={{ margin: 0 }}>
-    <tbody>{posts.map(renderItem)}</tbody>
-  </Table>
-)
-
-export default ({ query, title, id }) => (
-    <WindowWidget title={title}>
-        <QueryWrap query={query} variables={{ id }}>
-            <PostsList />
-        </QueryWrap>
-    </WindowWidget>
+export default ({ query, title, variables }) => (
+    <ListWidget
+        title={title}
+        query={query}
+        variables={variables}
+        itemName={'feeds'}
+        renderItem={renderItem}
+    />
 )

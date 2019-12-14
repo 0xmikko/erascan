@@ -15,6 +15,7 @@ import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import * as moment from 'moment'
 import DetailsWidget from "../../components/Widgets/DetailsWidget";
+import HashesListByFeedWidget from "../Hashes/HashesListByFeedWidget";
 
 const itemName = 'feeds'
 
@@ -31,4 +32,5 @@ const fields = [
 
 export default ({ id }) => (
     <DetailsWidget id={id} fields={fields} itemName={itemName} />
+    <HashesListByFeedWidget
 )
