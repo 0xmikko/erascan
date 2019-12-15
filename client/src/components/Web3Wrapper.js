@@ -7,11 +7,11 @@
 
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import * as actions from './store/actions'
-import * as reducers from './store/reducers'
+import * as actions from '../store/actions'
+import * as reducers from '../store/reducers'
 
 
-import NoWeb3FoundScreen from './screens/NoWeb3FoundScreen'
+import NoWeb3FoundScreen from '../screens/NoWeb3FoundScreen'
 
 export function Web3Wrapper({getWeb3, Web3, children}) {
 

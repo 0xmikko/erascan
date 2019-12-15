@@ -7,6 +7,7 @@
 
 import React from 'react'
 import DetailsWidget from '../../components/Widgets/DetailsWidget'
+import Web3Wrapper from '../../components/Web3Wrapper'
 
 const itemName = 'countdownGriefingEscrow'
 
@@ -36,6 +37,4 @@ const fields = [
   { name: 'Created', field: 'createdTimestamp' },
 ]
 
-export default ({ id }) => (
-  <DetailsWidget id={id} fields={fields} itemName={itemName} />
-)
+export default ({ id }) => <>Web4 Hi</>
