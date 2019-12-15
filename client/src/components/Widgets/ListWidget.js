@@ -20,8 +20,8 @@ const ItemsList = ({ data, itemName, renderItem }) => {
   )
 }
 
-export default ({ query, title, variables, itemName, renderItem }) => (
-  <WindowWidget title={title}>
+export default ({ query, title, variables, itemName, renderItem, rightToolbar }) => (
+  <WindowWidget title={title} rightToolbar={rightToolbar}>
     <QueryWrap query={query} variables={variables}>
       <ItemsList itemName={itemName} renderItem={renderItem}/>
     </QueryWrap>

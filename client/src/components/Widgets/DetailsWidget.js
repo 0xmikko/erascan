@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import { Table } from 'react-bootstrap'
+import {Media, Table} from 'react-bootstrap'
 import { gql } from 'apollo-boost'
 import AddressLink from '../../containers/Address/AddressLink'
 import WindowWidget from '../WindowWidget'
@@ -27,13 +27,15 @@ const RenderItem = ({ data, itemName, fields }) => {
 
   const info = fields.map(e => (
     <tr>
-      <td width={'50%'}>{e.name}</td>
-      <td align={'right'}>{renderValue(item, e.type, e.field)}</td>
+      <td width={'25%'}>{e.name}</td>
+      <td>
+          {renderValue(item, e.type, e.field)}
+      </td>
     </tr>
   ))
 
   return (
-    <Table style={{ margin: 0 }}>
+    <Table style={{ margin: 0, width: '100%', wordBreak: 'break-all'  }}>
       <tbody>{info}</tbody>
     </Table>
   )

@@ -16,7 +16,8 @@ import { Query } from 'react-apollo'
 import * as moment from 'moment'
 import QueryWrap from '../../components/QueryWrap'
 import HashListComponent from './HashListComponent'
-const GRAPH_QUERY = gql`
+
+const graphQuery = gql`
   query postsByFeed($id: String!) {
     posts(feed: $id, orderBy: createdTimestamp, orderDirection: desc) {
       id
@@ -32,7 +33,7 @@ const GRAPH_QUERY = gql`
 export const HashesListByFeedWidget = ({ id }) => {
   return (
     <WindowWidget title={'Posts by ' + id}>
-      <QueryWrap query={GRAPH_QUERY} variables={{ id }}>
+      <QueryWrap query={graphQuery} variables={{ id }}>
         <HashListComponent />
       </QueryWrap>
     </WindowWidget>

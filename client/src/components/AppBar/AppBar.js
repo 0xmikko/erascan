@@ -17,8 +17,9 @@ import {
 import { Link } from 'react-router-dom'
 import './AppBar.css'
 import logo from '../../logo.png'
+import NavItemLink from "./NavItemLink";
 
-const AppBar = props => {
+const AppBar = ({ onLogout }) => {
   return (
     <Container fluid style={{ backgroundColor: '#FFFFFF' }}>
       <Container>
@@ -31,26 +32,16 @@ const AppBar = props => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link style={{ marginLeft: 20 }} />
-              {/*<AppSearch className="mr-sm-2" />*/}
             </Nav>
             <Nav variant={'right'}>
-              <Nav.Item bsPrefix={'nav-link'}>
-                <Link to={'/track/'}>Track-record</Link>
-              </Nav.Item>
-              <Nav.Item bsPrefix={'nav-link'}>
-                <Link to={'/recourse/'}>Recourse</Link>
-              </Nav.Item>
-              <Nav.Item bsPrefix={'nav-link'}>
-                <Link to={'/faucet/'}>Faucet</Link>
-              </Nav.Item>
-              <Nav.Item bsPrefix={'nav-link'}>
-                <Link to={'/stat/'}>Statistics</Link>
-              </Nav.Item>
+              <NavItemLink to={'/track/'} label={'Track-record'} />
+              <NavItemLink to={'/recourse/'} label={'Recourse'} />
+              <NavItemLink to={'/faucet/'} label={'Faucet'} />
+              <NavItemLink to={'/stat/'} label={'Statistics'} />
+
               <Form inline />
               <NavDropdown title="Rinkeby" id="basic-nav-dropdown" alignRight>
-                <NavDropdown.Item onClick={props.onLogout}>
-                  Logout
-                </NavDropdown.Item>
+                <NavDropdown.Item onClick={onLogout}>Logout</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>

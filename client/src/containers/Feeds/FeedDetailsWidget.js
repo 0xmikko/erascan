@@ -17,7 +17,7 @@ import * as moment from 'moment'
 import DetailsWidget from '../../components/Widgets/DetailsWidget'
 import HashesListByFeedWidget from '../Hashes/HashesListByFeedWidget'
 
-const itemName = 'feeds'
+const itemName = 'feed'
 
 const fields = [
   { name: 'ID', field: 'id' },
@@ -33,6 +33,5 @@ const fields = [
 export default ({ id }) => (
   <>
     <DetailsWidget id={id} fields={fields} itemName={itemName} />
-    <HashesListByFeedWidget />
   </>
 )

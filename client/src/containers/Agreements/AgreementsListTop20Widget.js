@@ -51,6 +51,8 @@ const GRAPH_QUERY = gql`
   }
 `
 
+
+
 export const AgreementsListTop20Widget = () => {
   return (
 

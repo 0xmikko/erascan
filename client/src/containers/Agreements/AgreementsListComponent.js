@@ -11,6 +11,7 @@ import EthLink from '../../components/EthLink'
 import WindowWidget from '../../components/WindowWidget'
 import QueryWrap from '../../components/QueryWrap'
 import ListWidget from '../../components/Widgets/ListWidget'
+import ButtonLink from "../../components/ButtonLink";
 
 const renderItem = e => (
   <tr key={e.id}>
@@ -35,6 +36,9 @@ const renderItem = e => (
   </tr>
 )
 
+const rightToolbar = (
+    <ButtonLink to={'/agreements/new'} title={'New agreement'} />
+)
 
 export default ({ query, title, variables }) => (
   <ListWidget
@@ -43,5 +47,6 @@ export default ({ query, title, variables }) => (
     variables={variables}
     itemName={'countdownGriefingEscrows'}
     renderItem={renderItem}
+    rightToolbar={rightToolbar}
   />
 )

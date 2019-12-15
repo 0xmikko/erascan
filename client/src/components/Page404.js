@@ -16,7 +16,7 @@ const Page404 = () => {
       <br />
       <p>
         You can open
-        {/*    <Link component={App}>Devices List</Link> */}
+        {/*    <Link component={Web3Wrapper}>Devices List</Link> */}
       </p>
     </React.Fragment>
   )

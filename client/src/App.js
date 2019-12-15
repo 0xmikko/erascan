@@ -5,12 +5,10 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Route, Switch } from 'react-router'
 import { withRouter } from 'react-router'
-import { connect } from 'react-redux'
-import * as actions from './store/actions'
-import * as reducers from './store/reducers'
+import { Container } from 'react-bootstrap'
 
 import AppBar from './components/AppBar/AppBar'
 import Footer from './components/Footer'
@@ -23,53 +21,37 @@ import HashDetailsScreen from './screens/HashDetailsScreen'
 import AgreementDetailsScreen from './screens/AgreementDetailsScreen'
 import FeedDetailsScreen from './screens/FeedDetailsScreen'
 import AddressDetailsScreen from './screens/AddressDetailsScreen'
-import NoWeb3FoundScreen from './screens/NoWeb3FoundScreen'
-import { Container } from 'react-bootstrap'
-import FaucetScreen from "./screens/FaucetScreen";
 
-export function App(props) {
-  const { getWeb3, Web3 } = props
+import FaucetScreen from './screens/FaucetScreen'
+import AgreementCreateScreen from './screens/AgreementCreateScreen'
 
-  useEffect(() => {
-    if (!Web3) {
-      getWeb3()
-    }
-  }, [Web3, getWeb3])
+export const App = () => (
+  <>
+    <AppBar />
 
-  if (!Web3) {
-    return <NoWeb3FoundScreen />
-  }
-  return (
-    <>
-      <AppBar onLogout={props} {...props} />
+    <Container style={{ minHeight: window.innerHeight - 200 }}>
+      <Switch>
+        <Route path="/track/search/:search" component={TrackSearchScreen} />
+        <Route path="/track/" component={TrackScreen} />
 
-      <Container style={{ minHeight: window.innerHeight - 200 }}>
-        <Switch>
-          <Route path="/track/search/:search" component={TrackSearchScreen} />
-          <Route path="/track/" component={TrackScreen} />
+        <Route
+          path="/recourse/search/:search"
+          component={RecourseSearchScreen}
+        />
+        <Route path="/recourse/" component={RecourseScreen} />
 
-          <Route path="/recourse/search/:search" component={RecourseSearchScreen} />
-          <Route path="/recourse/" component={RecourseScreen} />
+        <Route path="/faucet/" component={FaucetScreen} />
 
-          <Route path="/faucet/" component={FaucetScreen} />
+        <Route path="/feeds/:id/" component={FeedDetailsScreen} />
+        <Route path="/addresses/:id/" component={AddressDetailsScreen} />
+        <Route path="/agreements/new/" component={AgreementCreateScreen} />
+        <Route path="/agreements/:id/" component={AgreementDetailsScreen} />
+        <Route path="/hashes/:id/" component={HashDetailsScreen} />
+        <Route path="/*" component={TrackScreen} />
+      </Switch>
+    </Container>
+    <Footer />
+  </>
+)
 
-          <Route path="/feed/:id/" component={FeedDetailsScreen} />
-          <Route path="/address/:id/" component={AddressDetailsScreen} />
-          <Route path="/agreement/:id/" component={AgreementDetailsScreen} />
-          <Route path="/*" component={TrackScreen} />
-        </Switch>
-      </Container>
-      <Footer {...props} />
-    </>
-  )
-}
-
-const mapStateToProps = state => ({
-  Web3: reducers.Web3(state),
-})
-
-const mapDispatchToProps = dispatch => ({
-  getWeb3: () => dispatch(actions.getWeb3()),
-})
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
+export default withRouter(App)

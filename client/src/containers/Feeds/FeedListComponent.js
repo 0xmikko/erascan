@@ -15,6 +15,7 @@ import EthLink from '../../components/EthLink'
 import { fromNow } from '../../utils/humandate'
 import ListWidget from '../../components/Widgets/ListWidget'
 import FeedLink from "./FeedLink";
+import ButtonLink from "../../components/ButtonLink";
 
 const renderItem = e => (
   <tr key={e.id}>
@@ -29,6 +30,10 @@ const renderItem = e => (
   </tr>
 )
 
+const rightToolbar = (
+    <ButtonLink to={'/feeds/new'} title={'+Feed'} />
+)
+
 export default ({ query, title, variables }) => (
   <ListWidget
     title={title}
@@ -36,5 +41,6 @@ export default ({ query, title, variables }) => (
     variables={variables}
     itemName={'feeds'}
     renderItem={renderItem}
+    rightToolbar={rightToolbar}
   />
 )

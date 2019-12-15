@@ -22,8 +22,8 @@ const FeedDetailsScreen = ({
     <Helmet>
       <title>Feed {id}</title>
     </Helmet>
-    <Container style={{ marginTop: 20 }}>
-      <h1>Feed {id}</h1>
+    <Container style={{ marginTop: 20 }} fluid={true}>
+      <h1>Feed {id}</h1><br />
       <Row>
         <Col sm={12}>
           <FeedDetailsWidget id={id} />

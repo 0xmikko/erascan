@@ -26,6 +26,8 @@ const GRAPH_QUERY = gql`
   }
 `
 
+
+
 export const FeedsListLast20Widget = () => (
     <FeedListComponent
         title={'Last 20 feeds '}
