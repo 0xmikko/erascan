@@ -17,11 +17,11 @@ import * as moment from 'moment'
 import QueryWrap from '../../components/QueryWrap'
 import AgreementsListComponent from './AgreementsListComponent'
 
-const GRAPH_QUERY = gql`
-  query agreements($operator){
+const graphQuery = gql`
+  query agreements($operator: String){
   
     oneWayGriefingAgreements(
-      operator: $operator
+      whetre: { operator: $operator }
       orderBy: createdTimestamp
       orderDirection: desc
     ) {
@@ -40,14 +40,10 @@ const GRAPH_QUERY = gql`
   }
 `
 
-export const AgreementsListByAddressWidget = ({id}) => {
-  return (
-    <WindowWidget title={'Agreements'}>
-      <QueryWrap query={GRAPH_QUERY} variables={{operator: id}}>
-        <AgreementsListComponent />
-      </QueryWrap>
-    </WindowWidget>
-  )
-}
-
-export default AgreementsListByAddressWidget
+export default ({ id }) => (
+    <AgreementsListComponent
+        query={graphQuery}
+        title={`Agreements found`}
+        variables={{ id }}
+    />
+)

@@ -10,8 +10,8 @@ import { connect } from 'react-redux'
 import { Col, Row, Container } from 'react-bootstrap'
 import {Helmet} from "react-helmet";
 
-import PostsListByAddressWidget from '../containers/Hashes/PostsListByAddressWidget'
 import FeedsListByAddressWidget from '../containers/Feeds/FeedsListByAddressWidget'
+import AgreementsListByAddressWidget from "../containers/Agreements/AgreementsListByAddressWidget";
 
 
 
@@ -35,10 +35,10 @@ const FeedDetailsScreen = ({
         <h1>Address {id}</h1>
         <Row>
           <Col sm={12}>
-            <PostsListByAddressWidget id={id} />
+            <FeedsListByAddressWidget id={id} />
           </Col>
           <Col sm={12}>
-            <FeedsListByAddressWidget id={id} />
+            <AgreementsListByAddressWidget id={id} />
           </Col>
         </Row>
       </Container>

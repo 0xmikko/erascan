@@ -9,7 +9,6 @@ import React, { useEffect } from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
 import TrackSearchBarWidget from '../containers/SearchBarWidget/TrackSearchBarWidget'
-import PostsListLast20Widget from '../containers/Hashes/PostsListLast20Widget'
 import FeedWidget from '../containers/Feeds/FeedsListLast20Widget'
 import { Helmet } from 'react-helmet'
 

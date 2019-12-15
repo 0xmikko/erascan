@@ -17,8 +17,8 @@ import * as moment from 'moment'
 import QueryWrap from '../../components/QueryWrap'
 import AgreementsListComponent from './AgreementsListComponent'
 
-const GRAPH_QUERY = gql`
-  query($search: String){
+const graphQuery = gql`
+  query($search: String) {
     countdownGriefingEscrows(
       where: { creator: $search }
       orderBy: createdTimestamp
@@ -51,14 +51,10 @@ const GRAPH_QUERY = gql`
   }
 `
 
-export const AgreementsListTop20Widget = ({ search }) => {
-  return (
-    <AgreementsListComponent
-      query={GRAPH_QUERY}
-      title={`Agreements found`}
-      variables={{ search }}
-    />
-  )
-}
-
-export default AgreementsListTop20Widget
+export default ({ search }) => (
+  <AgreementsListComponent
+    query={graphQuery}
+    title={`Agreements found`}
+    variables={{ search }}
+  />
+)

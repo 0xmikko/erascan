@@ -8,10 +8,10 @@
 import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
-import PostDetailsWidget from '../containers/Hashes/PostDetailsWidget'
+import HashDetailsWidget from '../containers/Hashes/HashDetailsWidget'
 import {Helmet} from "react-helmet";
 
-const PostDetailsScreen = ({
+const HashDetailsScreen = ({
   match: {
     params: { id },
   },
@@ -24,11 +24,11 @@ const PostDetailsScreen = ({
       <Row style={{ marginTop: 40 }}>
         <Col sm={12}>
           <h1>Post {id}</h1>
-          <PostDetailsWidget id={id} />
+          <HashDetailsWidget id={id} />
         </Col>
       </Row>
     </Container>
   </>
 )
 
-export default PostDetailsScreen
+export default HashDetailsScreen
