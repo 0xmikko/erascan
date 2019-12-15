@@ -24,6 +24,7 @@ import AddressDetailsScreen from './screens/AddressDetailsScreen'
 
 import FaucetScreen from './screens/FaucetScreen'
 import AgreementCreateScreen from './screens/AgreementCreateScreen'
+import FeedCreateScreen from './screens/FeedCreateScreen'
 
 export const App = () => (
   <>
@@ -42,6 +43,7 @@ export const App = () => (
 
         <Route path="/faucet/" component={FaucetScreen} />
 
+        <Route path="/feeds/new/" component={FeedCreateScreen} />
         <Route path="/feeds/:id/" component={FeedDetailsScreen} />
         <Route path="/addresses/:id/" component={AddressDetailsScreen} />
         <Route path="/agreements/new/" component={AgreementCreateScreen} />

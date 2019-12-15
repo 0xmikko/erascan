@@ -23,48 +23,47 @@ import InputField from './InputField'
 import CheckBoxField from './CheckBoxField'
 import SelectField from './SelectField'
 
-const formRenderHOC = fieldList => {
-  return props => {
-    const fields = Object.entries(fieldList).map(field => {
-      const key = field[0]
-      const value = field[1]
-      const type = field[1].type || 'text'
-      const inputProps = {
-        name: key,
-        type: type,
-        title: value.title,
-        sm: value.sm || 12,
-        key,
-        ...props,
-        ...field[1],
-      }
+const renderField = (field, values, errors) => {
+  const inputProps = {
+    name: field.field,
+    type: field.type || 'text',
+    title: field.name,
+    sm: field.sm || 12,
+    key: field.field,
+    values,
+    errors
+  }
 
-      switch (type) {
-        case 'text':
-        case 'password':
-          return <InputField {...inputProps} />
+  switch (field.type) {
+    default:
+    case 'text':
+    case 'password':
+    case 'Address':
+      return <InputField {...inputProps} />
 
-        case 'select':
-          return <SelectField {...inputProps} />
+    case 'select':
+      return <SelectField {...inputProps} />
 
-        case 'textarea':
-          return <InputField {...inputProps} as={'textarea'} />
+    case 'textarea':
+      return <InputField {...inputProps} as={'textarea'} />
 
-        case 'autocomplete':
-          return <AutoCompleteField {...inputProps} />
+    case 'autocomplete':
+      return <AutoCompleteField {...inputProps} />
 
-        case 'checkbox':
-          return <CheckBoxField {...inputProps} />
-      }
-    })
+    case 'checkbox':
+      return <CheckBoxField {...inputProps} />
+  }
+}
+
+export default fieldList => {
+  return ({ handleSubmit, values, errors }) => {
+    const fields = fieldList.map(f => renderField(f, values, errors))
 
     return (
-      <Form noValidate onSubmit={props.handleSubmit}>
+      <Form noValidate onSubmit={handleSubmit}>
         <Form.Row>{fields}</Form.Row>
         <Button type="submit">Save</Button>
       </Form>
     )
   }
 }
-
-export default formRenderHOC

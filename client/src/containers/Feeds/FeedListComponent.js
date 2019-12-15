@@ -31,7 +31,7 @@ const renderItem = e => (
 )
 
 const rightToolbar = (
-    <ButtonLink to={'/feeds/new'} title={'+Feed'} />
+    <ButtonLink to={'/feeds/new'} title={'New Feed'} />
 )
 
 export default ({ query, title, variables }) => (

@@ -16,7 +16,8 @@ import * as statuses from '../../store/utils/status'
 
 const FormikForm = ({ fieldList, initialValues, onSubmit }) => {
   const schemaPrep = {}
-  Object.entries(fieldList).map(x => (schemaPrep[x[0]] = x[1].validation))
+  const inputFieldsList = fieldList.filter(x => !x.readOnly)
+  inputFieldsList.map(x => (schemaPrep[x.field] = x.validation))
 
   const schema = yup.object({ ...schemaPrep })
   return (
@@ -24,7 +25,7 @@ const FormikForm = ({ fieldList, initialValues, onSubmit }) => {
       validationSchema={schema}
       onSubmit={onSubmit}
       initialValues={{ ...initialValues }}
-      render={formikRenderHOC(fieldList)}
+      render={formikRenderHOC(inputFieldsList)}
     />
   )
 }

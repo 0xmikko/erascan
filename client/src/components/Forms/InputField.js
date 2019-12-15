@@ -9,20 +9,27 @@ import { Col, Form } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const InputField = props => (
-  <Form.Group as={Col} md={props.sm}>
-    <Form.Label>{props.title}</Form.Label>
+export const InputField = ({
+  sm,
+  title,
+  as,
+  type,
+  name,
+  values,
+  handleChange,
+  errors,
+}) => (
+  <Form.Group as={Col} md={sm}>
+    <Form.Label>{title}</Form.Label>
     <Form.Control
-      as={props.as}
-      type={props.type}
-      name={props.name}
-      value={props.values[props.name]}
-      onChange={props.handleChange}
-      isInvalid={!!props.errors[props.name]}
+      as={as}
+      type={type}
+      name={name}
+      value={values[name]}
+      onChange={handleChange}
+      isInvalid={!!errors[name]}
     />
-    <Form.Control.Feedback type="invalid">
-      {props.errors[props.name]}
-    </Form.Control.Feedback>
+    <Form.Control.Feedback type="invalid">{errors[name]}</Form.Control.Feedback>
   </Form.Group>
 )
 
