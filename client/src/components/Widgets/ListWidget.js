@@ -5,7 +5,7 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 import React from 'react'
-import { Table } from 'react-bootstrap'
+import {Card, Table} from 'react-bootstrap'
 import { fromNow } from '../../utils/humandate'
 import EthLink from '../../components/EthLink'
 import WindowWidget from '../../components/WindowWidget'
@@ -13,6 +13,10 @@ import QueryWrap from '../../components/QueryWrap'
 
 const ItemsList = ({ data, itemName, renderItem, renderThead }) => {
   const items = data[itemName]
+
+  if (items.length === 0) {
+      return <Card><Card.Header>Nothing was found</Card.Header></Card>
+  }
   return (
     <Table style={{ margin: 0, width: '100%' }} cellSpacing={0} cellPadding={0}>
       {renderThead}

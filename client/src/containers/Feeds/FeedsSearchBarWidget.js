@@ -13,6 +13,7 @@ export default ({ history }) => (
   <SearchBarWidget
     prefix={prefix}
     title={'Erasure track record search'}
+    placeholder={'Search for feed id / creator address / operator address '}
     history={history}
   />
 )

@@ -14,39 +14,40 @@ import QueryWrap from '../../components/QueryWrap'
 import EthLink from '../../components/EthLink'
 import { fromNow } from '../../utils/humandate'
 import ListWidget from '../../components/Widgets/ListWidget'
-import FeedLink from "./FeedLink";
-import ButtonLink from "../../components/ButtonLink";
-import UserAvatar from "react-user-avatar";
+import FeedLink from './FeedLink'
+import ButtonLink from '../../components/ButtonLink'
+import UserAvatar from 'react-user-avatar'
 
-const renderThead =  (
-    <thead>
+const renderThead = (
+  <thead>
     <tr>
-    <td>&nbsp;</td>
-    <td>ID</td>
-    <td align={"right"}>Author</td>
+      <td>&nbsp;</td>
+      <td>ID</td>
+      <td align={'center'}>Author</td>
+      <td align={'center'}># of Hashes</td>
     </tr>
-    </thead>
+  </thead>
 )
 
 const renderItem = e => (
   <tr key={e.id}>
-      <td width={50}>
-          <UserAvatar size="48" name="Feed" color={"#CCCCCC"}/>
-      </td>
-    <td width={'50%'}>
+    <td width={50}>
+      <UserAvatar size="48" name="Feed" color={'#CCCCCC'} />
+    </td>
+    <td>
       <FeedLink id={e.id} />
       <div className={'TimeFont'}>{fromNow(e.createdTimestamp)}</div>
     </td>
-    <td align={'right'}>
-      <AddressLink id={e.creator} prefix={'Author'} />
-      <AddressLink id={e.creator} prefix={'Feed'} />
+    <td align={'center'}>
+      <AddressLink id={e.creator} label={'Creator'} />
+      <br />
+      <AddressLink id={e.operator} label={'Operator'} />
     </td>
+    <td align={'center'}>{e.hashes.length}</td>
   </tr>
 )
 
-const rightToolbar = (
-    <ButtonLink to={'/feeds/new'} title={'New Feed'} />
-)
+const rightToolbar = <ButtonLink to={'/feeds/new'} title={'New Feed'} />
 
 export default ({ query, title, variables }) => (
   <ListWidget

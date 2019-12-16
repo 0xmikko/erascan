@@ -32,10 +32,13 @@ const graphQuery = gql`
 
 export const HashesListByFeedWidget = ({ id }) => {
   return (
-    <WindowWidget title={'Posts by ' + id}>
-      <QueryWrap query={graphQuery} variables={{ id }}>
-        <HashListComponent />
-      </QueryWrap>
+    <WindowWidget title={'Hashes for ' + id}>
+        <p style={{padding: '10px'}}>
+        Under development
+        </p>
+      {/*<QueryWrap query={graphQuery} variables={{ id }}>*/}
+      {/*  <HashListComponent />*/}
+      {/*</QueryWrap>*/}
     </WindowWidget>
   )
 }

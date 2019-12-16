@@ -16,7 +16,7 @@ h1 {
   font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
   color: #4a4f55;
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 h2 {
@@ -34,7 +34,7 @@ h4 {
 }
 
 table tr td {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 thead {

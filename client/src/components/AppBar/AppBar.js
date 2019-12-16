@@ -37,7 +37,7 @@ const AppBar = ({ onLogout }) => {
               <NavItemLink to={'/feeds/'} label={'Track-record'} />
               <NavItemLink to={'/agreements/'} label={'Recourse'} />
               <NavItemLink to={'/faucet/'} label={'Faucet'} />
-              <NavItemLink to={'/stat/'} label={'Statistics'} />
+              {/*<NavItemLink to={'/stat/'} label={'Statistics'} />*/}
 
               <Form inline />
               <NavDropdown title="Rinkeby" id="basic-nav-dropdown" alignRight>

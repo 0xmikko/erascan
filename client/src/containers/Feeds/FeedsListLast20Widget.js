@@ -21,6 +21,7 @@ const graphQuery = gql`
       id
       creator
       operator
+      hashes
       createdTimestamp
     }
   }

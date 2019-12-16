@@ -10,7 +10,7 @@ import { Card, Form, InputGroup, Button } from 'react-bootstrap'
 import { Redirect } from "react-router";
 
 
-export const SearchBarWidget = ({history, prefix, title}) => {
+export const SearchBarWidget = ({history, prefix, title, placeholder}) => {
   const [searchInput, setSearchInput] = useState('')
   const searchPress = () => {
     console.log(searchInput)
@@ -29,7 +29,7 @@ export const SearchBarWidget = ({history, prefix, title}) => {
         <InputGroup className="mb-3">
           <Form.Control
             type="text"
-            placeholder="Search by address / proofHash / "
+            placeholder={placeholder}
             onChange={onSearchLineChanged}
             value={searchInput}
           />
