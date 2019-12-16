@@ -25,7 +25,7 @@ export const FaucetWidget = ({ giveNMR, faucet }) => {
     setAddressValid(Web3.utils.isAddress(value))
   }
 
-  const  onSubmit = e => {
+  const onSubmit = e => {
     e.preventDefault()
     console.log('Hi - Hi')
     giveNMR(value)
@@ -58,7 +58,15 @@ export const FaucetWidget = ({ giveNMR, faucet }) => {
       break
 
     case status.STATUS_SUCCESS:
-      feedbackText = "Success! You'll get your NMR soon"
+      feedbackText = (
+        <>
+          Success! Check your transaction{' '}
+          <a href={`https://rinkeby.etherscan.io/tx/${faucet.tx}`}>
+            {' '}
+            {faucet.tx}
+          </a>
+        </>
+      )
       feedbackColor = '#00AA00'
       break
     case status.STATUS_FAILURE:
@@ -89,7 +97,9 @@ export const FaucetWidget = ({ giveNMR, faucet }) => {
               </Button>
             </InputGroup.Append>
           </InputGroup>
-          <p style={{ color: feedbackColor, marginBottom: 0 }}>{feedbackText}</p>
+          <p style={{ color: feedbackColor, marginBottom: 0 }}>
+            {feedbackText}
+          </p>
         </Form>
       </Card.Body>
     </Card>

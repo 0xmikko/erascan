@@ -11,6 +11,7 @@ import * as status from '../utils/status'
 
 const initialState = {
   status: status.STATUS_UPDATE_NEEDED,
+  tx: undefined,
   error: null,
 }
 
@@ -28,6 +29,7 @@ export default (state = initialState, action) => {
       return updateState(state, {
         ...state,
         status: status.STATUS_SUCCESS,
+        tx: action.payload.tx,
         error: null,
       })
 
