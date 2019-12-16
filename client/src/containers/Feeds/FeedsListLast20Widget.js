@@ -14,25 +14,20 @@ import { Link } from 'react-router-dom'
 import { gql } from 'apollo-boost'
 import { Query } from 'react-apollo'
 import * as moment from 'moment'
-import FeedListComponent from "./FeedListComponent";
-const GRAPH_QUERY = gql`
+import FeedListComponent from './FeedListComponent'
+const graphQuery = gql`
   {
-    feeds(first: 20) {
+    feeds(first: 20, orderBy: createdTimestamp, orderDirection: desc) {
       id
       creator
       operator
-      hashes 
+      createdTimestamp
     }
   }
 `
 
-
-
 export const FeedsListLast20Widget = () => (
-    <FeedListComponent
-        title={'Last 20 feeds '}
-        query={GRAPH_QUERY}
-    />
+  <FeedListComponent title={'Last 20 feeds'} query={graphQuery} />
 )
 
 export default FeedsListLast20Widget

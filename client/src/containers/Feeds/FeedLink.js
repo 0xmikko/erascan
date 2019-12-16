@@ -6,8 +6,8 @@
  */
 
 import React from 'react'
-import { connect } from 'redux'
 import EthLink from "../../components/EthLink";
+import { prefix} from "./Entity";
 
-export default ({ id, label }) => <EthLink prefix={'/feed/'} label={label} id={id} />
+export default ({ id, label }) => <EthLink prefix={prefix} label={label} id={id} />
 

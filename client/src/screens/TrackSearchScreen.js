@@ -8,7 +8,7 @@
 import React, { useEffect } from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
-import TrackSearchBarWidget from '../containers/SearchBarWidget/TrackSearchBarWidget'
+import TrackSearchBarWidget from '../containers/Feeds/FeedsSearchBarWidget'
 import FeedSearchWidget from '../containers/Feeds/FeedsListSearchWidget'
 import { Helmet } from 'react-helmet'
 

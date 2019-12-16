@@ -34,8 +34,8 @@ const AppBar = ({ onLogout }) => {
               <Nav.Link style={{ marginLeft: 20 }} />
             </Nav>
             <Nav variant={'right'}>
-              <NavItemLink to={'/track/'} label={'Track-record'} />
-              <NavItemLink to={'/recourse/'} label={'Recourse'} />
+              <NavItemLink to={'/feeds/'} label={'Track-record'} />
+              <NavItemLink to={'/agreements/'} label={'Recourse'} />
               <NavItemLink to={'/faucet/'} label={'Faucet'} />
               <NavItemLink to={'/stat/'} label={'Statistics'} />
 

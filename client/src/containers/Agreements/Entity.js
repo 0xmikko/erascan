@@ -9,6 +9,7 @@ import * as Yup from "yup";
 import { isEthAddress } from "../../utils/isEthAddress";
 
 export const itemName = 'countdownGriefingEscrow'
+export const prefix = '/agreements/'
 
 export const fields = [
     {

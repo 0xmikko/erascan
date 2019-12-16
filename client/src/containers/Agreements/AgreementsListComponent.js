@@ -5,39 +5,34 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 import React from 'react'
-import { Table } from 'react-bootstrap'
 import { fromNow } from '../../utils/humandate'
-import EthLink from '../../components/EthLink'
-import WindowWidget from '../../components/WindowWidget'
-import QueryWrap from '../../components/QueryWrap'
 import ListWidget from '../../components/Widgets/ListWidget'
 import ButtonLink from "../../components/ButtonLink";
+import AgreementLink from "./AgreementLink";
+import AddressLink from "../Address/AddressLink";
+import { prefix} from "./Entity";
 
 const renderItem = e => (
   <tr key={e.id}>
     <td width={'50%'}>
-      <EthLink id={e.id} prefix={'/agreement/'} />
+      <AgreementLink id={e.id}/>
       <div className={'TimeFont'}>{fromNow(e.createdTimestamp)}</div>
     </td>
     <td align={'right'}>
-      <EthLink
+      <AddressLink
         id={e.creator}
         label={'Feed'}
-        prefix={'/address/'}
-        shorten={false}
       />
-      <EthLink
+      <AddressLink
         id={e.operator}
         label={'Operator'}
-        prefix={'/address/'}
-        shorten={true}
       />
     </td>
   </tr>
 )
 
 const rightToolbar = (
-    <ButtonLink to={'/agreements/new'} title={'New agreement'} />
+    <ButtonLink to={prefix + 'new'} title={'New agreement'} />
 )
 
 export default ({ query, title, variables }) => (

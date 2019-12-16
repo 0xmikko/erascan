@@ -11,6 +11,7 @@ import { gql } from 'apollo-boost'
 import AddressLink from '../../containers/Address/AddressLink'
 import WindowWidget from '../WindowWidget'
 import QueryWrap from '../QueryWrap'
+import {humanDate} from "../../utils/humandate";
 
 const renderValue = (item, type, field) => {
   switch (type) {
@@ -19,6 +20,9 @@ const renderValue = (item, type, field) => {
       return item[field]
     case 'Address':
       return <AddressLink id={item[field]} />
+      case 'Timestamp':
+          const timeStamp = item[field]
+          return  `${timeStamp} (${humanDate(timeStamp)})`
   }
 }
 

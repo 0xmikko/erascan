@@ -8,7 +8,7 @@
 import React, { useEffect } from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
-import TrackSearchBarWidget from '../containers/SearchBarWidget/TrackSearchBarWidget'
+import FeedsSearchBarWidget from '../containers/Feeds/FeedsSearchBarWidget'
 import FeedWidget from '../containers/Feeds/FeedsListLast20Widget'
 import { Helmet } from 'react-helmet'
 
@@ -20,7 +20,7 @@ const TrackScreen = ({history}) => (
     <Container fluid={true}>
       <Row style={{ marginTop: 40 }}>
         <Col sm={12}>
-          <TrackSearchBarWidget history={history}/>
+          <FeedsSearchBarWidget history={history}/>
         </Col>
       </Row>
       <Row style={{ marginTop: 20 }}>

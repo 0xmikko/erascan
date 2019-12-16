@@ -16,6 +16,7 @@ export const InputField = ({
   type,
   name,
   values,
+    editable,
   handleChange,
   errors,
 }) => (
@@ -28,6 +29,7 @@ export const InputField = ({
       value={values[name]}
       onChange={handleChange}
       isInvalid={!!errors[name]}
+      readOnly={(editable===undefined) ? false : !editable}
     />
     <Form.Control.Feedback type="invalid">{errors[name]}</Form.Control.Feedback>
   </Form.Group>

@@ -5,10 +5,5 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-export {
-  getWeb3,
-  deployContract,
-  depositLinks,
-  depositMoney,
-  sendMoney,
-} from './web3'
+export { getWeb3 } from './web3'
+export { createFeed } from './feeds'

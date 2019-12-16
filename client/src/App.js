@@ -32,23 +32,41 @@ export const App = () => (
 
     <Container style={{ minHeight: window.innerHeight - 200 }}>
       <Switch>
-        <Route path="/track/search/:search" component={TrackSearchScreen} />
-        <Route path="/track/" component={TrackScreen} />
-
+        // Feeds part
+        <Route path="/feeds/" exact={true} component={TrackScreen} />
         <Route
-          path="/recourse/search/:search"
+          path="/feeds/search/:search"
+          exact={true}
+          component={TrackSearchScreen}
+        />
+        <Route path="/feeds/new/" exact={true} component={FeedCreateScreen} />
+        <Route path="/feeds/:id/" exact={true} component={FeedDetailsScreen} />
+        <Route path="/hashes/:id/" component={HashDetailsScreen} />
+        // Agreements
+        <Route path="/agreements/" exact={true} component={RecourseScreen} />
+        <Route
+          path="/agreements/search/:search"
+          exact={true}
           component={RecourseSearchScreen}
         />
-        <Route path="/recourse/" component={RecourseScreen} />
-
+        <Route
+          path="/agreements/new/"
+          exact={true}
+          component={AgreementCreateScreen}
+        />
+        <Route
+          path="/agreements/:id/"
+          exact={true}
+          component={AgreementDetailsScreen}
+        />
+        // Faucet
         <Route path="/faucet/" component={FaucetScreen} />
-
-        <Route path="/feeds/new/" component={FeedCreateScreen} />
-        <Route path="/feeds/:id/" component={FeedDetailsScreen} />
-        <Route path="/addresses/:id/" component={AddressDetailsScreen} />
-        <Route path="/agreements/new/" component={AgreementCreateScreen} />
-        <Route path="/agreements/:id/" component={AgreementDetailsScreen} />
-        <Route path="/hashes/:id/" component={HashDetailsScreen} />
+        // Others
+        <Route
+          path="/address/:id/"
+          exact={true}
+          component={AddressDetailsScreen}
+        />
         <Route path="/*" component={TrackScreen} />
       </Switch>
     </Container>

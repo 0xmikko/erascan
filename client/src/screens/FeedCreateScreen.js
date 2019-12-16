@@ -28,7 +28,7 @@ const FeedDetailsScreen = ({
       <Container fluid={true}>
         <Row style={{ marginTop: 40 }}>
           <Col sm={12}>
-            <h1 style={{ marginBottom: 20 }}>Create New Agreement</h1>
+            <h1 style={{ marginBottom: 20 }}>Create New Feed</h1>
             <FeedCreateWidget />
           </Col>
         </Row>

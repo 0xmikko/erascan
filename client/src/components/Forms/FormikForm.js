@@ -14,7 +14,7 @@ import * as yup from 'yup'
 import formikRenderHOC from './FormRenderHOC'
 import * as statuses from '../../store/utils/status'
 
-const FormikForm = ({ fieldList, initialValues, onSubmit }) => {
+const FormikForm = ({ fieldList, initialValues, onSubmit, submitLabel, submitDisabled }) => {
   const schemaPrep = {}
   const inputFieldsList = fieldList.filter(x => !x.readOnly)
   inputFieldsList.map(x => (schemaPrep[x.field] = x.validation))
@@ -25,7 +25,7 @@ const FormikForm = ({ fieldList, initialValues, onSubmit }) => {
       validationSchema={schema}
       onSubmit={onSubmit}
       initialValues={{ ...initialValues }}
-      render={formikRenderHOC(inputFieldsList)}
+      render={formikRenderHOC(inputFieldsList, submitLabel, submitDisabled)}
     />
   )
 }

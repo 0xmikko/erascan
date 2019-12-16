@@ -9,9 +9,16 @@ import { isEthAddress } from '../../utils/isEthAddress'
 import * as Yup from 'yup'
 
 export const itemName = 'feed'
+export const prefix = '/feeds/'
 
 export const fields = [
   { name: 'ID', field: 'id', readOnly: true },
+  {
+    name: 'Creator',
+    field: 'creator',
+    type: 'Address',
+    editable: false,
+  },
   {
     name: 'Operator',
     field: 'operator',
@@ -23,16 +30,15 @@ export const fields = [
     name: 'Metadata',
     field: 'metadata',
     sm: 12,
-    validation: Yup.string().required('Required'),
+    validation: Yup.string(),
   },
   { name: 'MetadataB58', field: 'metadataB58', readOnly: true },
   {
     name: 'Initial metadata',
     field: 'initMetadata',
-    sm: 12,
-    validation: Yup.string().required('Required'),
+    readOnly: true
   },
   { name: 'Initial metadataB58', field: 'initMetadataB58', readOnly: true },
   { name: 'Initial calldata', field: 'initCallData', readOnly: true },
-  { name: 'Created', field: 'createdTimestamp', readOnly: true },
+  { name: 'Created', field: 'createdTimestamp', type: 'Timestamp', readOnly: true },
 ]
