@@ -7,7 +7,6 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
-//import DevicesList from '../../containers/Devices/DevicesList'
 
 const Page404 = () => {
   return (
@@ -16,7 +15,6 @@ const Page404 = () => {
       <br />
       <p>
         You can open
-        {/*    <Link component={Web3Wrapper}>Devices List</Link> */}
       </p>
     </React.Fragment>
   )
