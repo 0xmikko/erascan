@@ -1,0 +1,9 @@
+{
+  "name": "erascan",
+  "version": "0.1.0",
+  "private": true,
+  "engines": { "node": "10.15.3", "npm": "6.4.1" },
+  "scripts": {
+    "postinstall": "cd client && npm install --only=dev && npm install && npm run build"
+  }
+}

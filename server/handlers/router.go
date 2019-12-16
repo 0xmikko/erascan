@@ -49,28 +49,20 @@ func StartServer(services services.Services, port string) {
 		log.Println("Sentry service was started")
 	}
 
-
 	// Api handlers. Restricted area
 	apiRouter := router.Group("/api")
 	accounts.RegisterController(apiRouter, services.AccountsService)
 
-
 	// Temporary added to serve landing page
 
-	staticPath := "./landing"
+	staticPath := "../client/build"
 	if config.GetConfigType() == config.PROD {
-		staticPath = "/app/server/landing"
-	}
-
-	walletPath := "../web/build"
-	if config.GetConfigType() == config.PROD {
-		walletPath = "/app/web/build"
+		staticPath = "/app/client/build"
 	}
 
 	router.Use(static.Serve("/", static.LocalFile(staticPath, false)))
-	router.Use(static.Serve("/wallet", static.LocalFile(walletPath, false)))
 	router.NoRoute(func(c *gin.Context) {
-		c.File(walletPath + "/index.html")
+		c.File(staticPath + "/index.html")
 	})
 
 	log.Println("Starting service at :" + port)
