@@ -18,5 +18,6 @@ export default history =>
   })
 
 export const Web3 = state => fromWeb3.web3(state.web3)
+export const web3status = state => fromWeb3.web3status(state.web3)
 export const accounts = state => fromWeb3.accounts(state.web3)
 export const transactionUpdates = state => fromFeed.transactionUpdates(state.feeds)
