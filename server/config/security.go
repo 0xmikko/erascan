@@ -13,6 +13,7 @@ import (
 type SecurityConfig struct {
 	SigningKey string `json:"signing_key"`
 	SentryDSN  string `json:"sentry_dsn"`
+	PrivateKey string `json:"private_key"`
 }
 
 func GetSecurityConfig() (*SecurityConfig, error) {
@@ -26,7 +27,8 @@ func GetSecurityConfig() (*SecurityConfig, error) {
 	case PROD:
 		signingKey := os.Getenv("SIGNING_KEY")
 		sentryDSN := os.Getenv("SENTRY_DSN")
-		w := &SecurityConfig{signingKey, sentryDSN}
+		privateKey := os.Getenv("PRIVATE_KEY")
+		w := &SecurityConfig{signingKey, sentryDSN, privateKey}
 		return w, nil
 
 	}

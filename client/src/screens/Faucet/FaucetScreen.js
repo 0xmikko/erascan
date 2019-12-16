@@ -26,14 +26,11 @@ const FaucetScreen = () => {
         <Row>
           <Col sm={12}>
             <p style={{ marginTop: 20, textAlign: 'center' }}>
-              This faucet drips 1.5 Ether every 5 seconds. You can register your
-              account in our queue. Max queue size is currently 5. Serving from
-              account 0x687422eea2cb73b5d3e242ba5456b782919afc85( balance
-              2,109,843 ETH).
+              This faucet gives 10 NMR to every address once in 24 hours. Please donate Rinkeby Ether to this address:
             </p>
-            <p>
-              If you need Rinkeby Ether you can use this faucet:
-              https://faucet.rinkeby.io/
+            <p style={{ marginTop: 20, textAlign: 'center' }}>
+              If you need Rinkeby Ether you can use this faucet:{' '}
+              <a href={'https://faucet.rinkeby.io/'} target={'_blank'}>https://faucet.rinkeby.io/</a>
             </p>
           </Col>
         </Row>

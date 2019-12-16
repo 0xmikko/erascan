@@ -9,6 +9,7 @@ package faucets
 import (
 	"github.com/MikaelLazarev/erascan/server/core"
 	"github.com/patrickmn/go-cache"
+
 	"time"
 )
 
@@ -21,6 +22,6 @@ var repeatFaucetAllowedInterval = 24 * time.Hour
 // NewStore - creates New store
 func New() core.FaucetsStore {
 	c := cache.New(repeatFaucetAllowedInterval, repeatFaucetAllowedInterval)
-	// Migrate model
+
 	return &store{c}
 }
