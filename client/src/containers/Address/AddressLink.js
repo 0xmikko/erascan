@@ -9,5 +9,5 @@ import React from 'react'
 import { connect } from 'redux'
 import EthLink from "../../components/EthLink";
 
-export default ({ id, label }) => <EthLink prefix={'/address/'} label={label} id={id} />
+export default ({ id, label, shorten }) => <EthLink prefix={'/address/'} label={label} id={id} shorten={shorten}/>
 

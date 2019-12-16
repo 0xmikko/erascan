@@ -16,9 +16,23 @@ import { fromNow } from '../../utils/humandate'
 import ListWidget from '../../components/Widgets/ListWidget'
 import FeedLink from "./FeedLink";
 import ButtonLink from "../../components/ButtonLink";
+import UserAvatar from "react-user-avatar";
+
+const renderThead =  (
+    <thead>
+    <tr>
+    <td>&nbsp;</td>
+    <td>ID</td>
+    <td align={"right"}>Author</td>
+    </tr>
+    </thead>
+)
 
 const renderItem = e => (
   <tr key={e.id}>
+      <td width={50}>
+          <UserAvatar size="48" name="Feed" color={"#CCCCCC"}/>
+      </td>
     <td width={'50%'}>
       <FeedLink id={e.id} />
       <div className={'TimeFont'}>{fromNow(e.createdTimestamp)}</div>
@@ -40,6 +54,7 @@ export default ({ query, title, variables }) => (
     query={query}
     variables={variables}
     itemName={'feeds'}
+    renderThead={renderThead}
     renderItem={renderItem}
     rightToolbar={rightToolbar}
   />

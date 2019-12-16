@@ -31,12 +31,14 @@ const FeedDetailsScreen = ({
       <Helmet>
         <title>Address {id}</title>
       </Helmet>
-      <Container style={{ marginTop: 20 }}>
-        <h1>Address {id}</h1>
+      <Container style={{ marginTop: 20 }} fluid={true}>
+        <h1>Search results</h1>
         <Row>
           <Col sm={12}>
             <FeedsListByAddressWidget id={id} />
           </Col>
+        </Row><br />
+        <Row>
           <Col sm={12}>
             <AgreementsListByAddressWidget id={id} />
           </Col>

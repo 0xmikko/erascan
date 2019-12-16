@@ -15,7 +15,7 @@ export const WindowWidget = ({ title, rightToolbar, children }) => {
         <tbody>
           <tr valign="center">
             <td>
-              <b style={{ margin: '0 0 0 0' }}>{title}</b>
+              <b style={{ margin: '0 0 0 0', fontSize: '16px' }}>{title}</b>
             </td>
             <td align="right">{rightToolbar}</td>
           </tr>
@@ -29,7 +29,7 @@ export const WindowWidget = ({ title, rightToolbar, children }) => {
   return (
     <Card style={{ backgroundColor: '#FAFBFC' }}>
       {header}
-      <Card.Body style={{ paddingTop: 0, paddingBottom: 0 }}>
+      <Card.Body style={{ padding: 0 }}>
         {children}
       </Card.Body>
     </Card>

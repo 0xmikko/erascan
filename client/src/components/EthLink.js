@@ -10,8 +10,6 @@ import { connect } from 'redux'
 
 export default ({ id, label, prefix, shorten }) => (
   <>
-    {label} <a href={prefix + id}>{id}</a>
+    {label} <a href={prefix + id}>{shorten ? id.substr(0, 22) + '...': id}</a>
   </>
 )
-
-//{shorten ? id.substr(0, 20) + '...': id}

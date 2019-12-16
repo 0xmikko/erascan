@@ -12,20 +12,24 @@ import { gql } from 'apollo-boost'
 import QueryWrap from '../../components/QueryWrap'
 import FeedListComponent from './FeedListComponent'
 
-const GRAPH_QUERY = gql`
-  {
-    feeds(first: 20, orderBy: createdTimestamp, orderDirection: desc) {
+const graphQuery = gql`
+  query feeds($address: String){
+  
+    feeds(
+      where: { operator: $address }
+      orderBy: createdTimestamp
+      orderDirection: desc
+    ) {
       id
       creator
       operator
-      staticMetadataB58
       createdTimestamp
     }
   }
 `
 
-export const FeedsWidget = ({ id }) => (
-  <FeedListComponent title={'Posts by ' + id} query={GRAPH_QUERY} id={id} />
+export const FeedsListByAddressWidget = ({ id }) => (
+  <FeedListComponent title={'Feeds by ' + id} query={graphQuery} variables={{address: id}} />
 )
 
-export default FeedsWidget
+export default FeedsListByAddressWidget

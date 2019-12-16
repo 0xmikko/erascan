@@ -12,15 +12,34 @@ body {
 }
 
 h1 {
+  font-size: 24px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
+  color: #4a4f55;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
   font-size: 19.5px;
   font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
   color: #4a4f55;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 h4 {
   font-size: 17px;
   font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
   font-weight: bold;
+}
+
+table tr td {
+  font-size: 14px;
+}
+
+thead {
+  font-weight:bold;
+  background-color: #F2F3F4;
 }
 
 .App {
