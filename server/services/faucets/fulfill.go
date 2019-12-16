@@ -56,7 +56,7 @@ func (s *service) FulFill(address string) error {
 	}
 
 	recepientAddress := common.HexToAddress(address)
-	tx, err := instance.MintMockTokens(auth, recepientAddress, big.NewInt(1000000000000000000))
+	tx, err := instance.MintMockTokens(auth, recepientAddress, big.NewInt(10000000000000000000))
 	if err != nil {
 		log.Fatal(err)
 	}

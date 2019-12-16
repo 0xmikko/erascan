@@ -40,9 +40,11 @@ const AppBar = ({ onLogout }) => {
               {/*<NavItemLink to={'/stat/'} label={'Statistics'} />*/}
 
               <Form inline />
-              <NavDropdown title="Rinkeby" id="basic-nav-dropdown" alignRight>
-                <NavDropdown.Item onClick={onLogout}>Logout</NavDropdown.Item>
-              </NavDropdown>
+              <Nav title="Rinkeby" id="basic-nav-dropdown" alignRight>
+                <Nav.Item bsPrefix={'nav-link'}>
+                  <a href={"https://rinkeby.etherscan.io/"} style={{color: "#888888"}}>Rinkeby</a>
+                </Nav.Item>
+              </Nav>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

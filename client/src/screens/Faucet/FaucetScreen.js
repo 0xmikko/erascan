@@ -26,9 +26,10 @@ const FaucetScreen = () => {
         <Row>
           <Col sm={12}>
             <p style={{ marginTop: 20, textAlign: 'center' }}>
-              This faucet gives 10 NMR to every address once in 24 hours. Please donate Rinkeby Ether to this address:
-            </p>
-            <p style={{ marginTop: 20, textAlign: 'center' }}>
+              This faucet gives 10 NMR to every address once in 24 hours. <br />
+              Each transaction requires ethereum. Please donate Rinkeby Ether to this address:{' '}
+              <a href={'https://rinkeby.etherscan.io/address/0x92AfE89DE08A32a09e69C52AEA3371D24C719395'}>0x92AfE89DE08A32a09e69C52AEA3371D24C719395</a>
+           <br />
               If you need Rinkeby Ether you can use this faucet:{' '}
               <a href={'https://faucet.rinkeby.io/'} target={'_blank'}>https://faucet.rinkeby.io/</a>
             </p>
