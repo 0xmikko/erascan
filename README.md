@@ -1,5 +1,5 @@
 # erascan
-### Erasure protocol exporer for fast developemnt
+### Erasure protocol exporer for fast development
 
 
 Erasacn is open source tool for fast development using erasure protocol (. It combines explorer & faucet.
