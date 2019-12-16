@@ -19,4 +19,5 @@ Video presentation:
 ### Components & stack
 
 Client: React, web3.js, Graph (https://thegraph.com), GraphQL
+
 Backend: Golang, go-cache, go-ethereum, gin-gonic
