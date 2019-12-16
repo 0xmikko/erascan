@@ -13,10 +13,9 @@ type (
 	FaucetsStore interface {
 		AddToList(address string)
 		IsFullfilledLast24H(address string) bool
-
 	}
 
 	FaucetService interface {
-		FulFill(address string) error
+		FulFill(address string) (string, error)
 	}
 )

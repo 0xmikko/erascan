@@ -19,11 +19,11 @@ import (
 	"math/big"
 )
 
-func (s *service) FulFill(address string) error {
+func (s *service) FulFill(address string) (string, error) {
 
 	fmt.Println(address)
 	if s.store.IsFullfilledLast24H(address) {
-		return errors.ErrorCantFulFill
+		return "", errors.ErrorCantFulFill
 	}
 
 	publicKey := s.privateKey.Public()
@@ -56,14 +56,14 @@ func (s *service) FulFill(address string) error {
 	}
 
 	recepientAddress := common.HexToAddress(address)
-	tx, err := instance.MintMockTokens(auth, recepientAddress, big.NewInt(10000000000000000000))
+	tx, err := instance.MintMockTokens(auth, recepientAddress, big.NewInt(0).Mul(big.NewInt(1000000000000000000), big.NewInt(10)))
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("tx sent: %s", tx.Hash().Hex())
+	log.Printf("tx sent: %s", tx.Hash().Hex())
 
 	s.store.AddToList(address)
 
-	return nil
+	return tx.Hash().Hex(), nil
 }

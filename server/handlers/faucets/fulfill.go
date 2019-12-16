@@ -12,8 +12,6 @@ import (
 	"net/http"
 )
 
-
-
 func FulFillHandler(c *gin.Context) {
 
 	accountID, ok := c.Params.Get("id")
@@ -22,13 +20,13 @@ func FulFillHandler(c *gin.Context) {
 		return
 	}
 
-	err := faucetService.FulFill(accountID)
+	tx, err := faucetService.FulFill(accountID)
 	if err != nil {
 		log.Println(err)
 		c.AbortWithStatusJSON(http.StatusForbidden, gin.H{"error": err.Error()})
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{"data": true})
+	c.JSON(http.StatusOK, gin.H{"tx": tx})
 
 }
