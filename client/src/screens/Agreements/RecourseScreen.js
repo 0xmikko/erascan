@@ -8,8 +8,8 @@
 import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
-import AgreementsSearchBar from '../containers/Agreements/AgreementsSearchBar'
-import { AgreementsListLatestWidget } from '../containers/Agreements/AgreementsListWidget'
+import AgreementsSearchBar from '../../containers/Agreements/AgreementsSearchBar'
+import { AgreementsListLatestWidget } from '../../containers/Agreements/AgreementsListWidget'
 
 const RecourseScreen = ({history}) => (
   <>

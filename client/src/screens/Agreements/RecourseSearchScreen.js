@@ -8,33 +8,26 @@
 import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
+import { AgreementsListSearch } from '../../containers/Agreements/AgreementsListWidget'
 
-import FeedsSearchBar from '../containers/Feeds/FeedsSearchBar'
-import { FeedsListSearchWidget } from '../containers/Feeds/FeedsListWidget'
-
-const TrackSearchScreen = ({
-  history,
+const RecourseSearchScreen = ({
   match: {
     params: { search },
   },
 }) => (
   <>
     <Helmet>
-      <title>Track Search Results</title>
+      <title>Agreements Search Results</title>
     </Helmet>
     <Container fluid={true}>
-      <Row style={{ marginTop: 40 }}>
-        <Col sm={12}>
-          <FeedsSearchBar history={history} />
-        </Col>
-      </Row>
       <Row style={{ marginTop: 20 }}>
         <Col sm={12}>
-          <FeedsListSearchWidget search={search} />
+          <h1 style={{marginBottom: 20}}>Search results for {search}</h1>
+          <AgreementsListSearch search={search} />
         </Col>
       </Row>
     </Container>
   </>
 )
 
-export default TrackSearchScreen
+export default RecourseSearchScreen

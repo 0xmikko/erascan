@@ -9,11 +9,11 @@ import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 
-import FeedDetailsWidget from '../containers/Feeds/FeedDetailsWidget'
-import HashesListByFeedWidget from '../containers/Hashes/HashesListByFeedWidget'
-import Web3Wrapper from '../components/Web3Wrapper'
-import AgreementCreateWidget from '../containers/Agreements/AgreementCreateWidget'
-import FeedCreateWidget from '../containers/Feeds/FeedCreateWidget'
+import FeedDetailsWidget from '../../containers/Feeds/FeedDetailsWidget'
+import HashesListByFeedWidget from '../../containers/Hashes/HashesListByFeedWidget'
+import Web3Wrapper from '../../components/Web3Wrapper'
+import AgreementCreateWidget from '../../containers/Agreements/AgreementCreateWidget'
+import FeedCreateWidget from '../../containers/Feeds/FeedCreateWidget'
 
 const FeedCreateScreen = () => (
   <>

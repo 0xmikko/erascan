@@ -8,8 +8,8 @@
 import React, { useEffect } from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
-import FeedsSearchBarWidget from '../containers/Feeds/FeedsSearchBar'
-import { FeedsListLatestWidget } from '../containers/Feeds/FeedsListWidget'
+import FeedsSearchBarWidget from '../../containers/Feeds/FeedsSearchBar'
+import { FeedsListLatestWidget } from '../../containers/Feeds/FeedsListWidget'
 import { Helmet } from 'react-helmet'
 
 const TrackScreen = ({history}) => (

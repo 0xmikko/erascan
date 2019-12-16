@@ -9,8 +9,8 @@ import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 import {Helmet} from "react-helmet";
 
-import FeedDetailsWidget from '../containers/Feeds/FeedDetailsWidget'
-import HashesListByFeedWidget from '../containers/Hashes/HashesListByFeedWidget'
+import FeedDetailsWidget from '../../containers/Feeds/FeedDetailsWidget'
+import HashesListByFeedWidget from '../../containers/Hashes/HashesListByFeedWidget'
 
 
 const FeedDetailsScreen = ({

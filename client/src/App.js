@@ -13,18 +13,18 @@ import { Container } from 'react-bootstrap'
 import AppBar from './components/AppBar/AppBar'
 import Footer from './components/Footer'
 
-import TrackScreen from './screens/TrackScreen'
-import TrackSearchScreen from './screens/TrackSearchScreen'
-import RecourseScreen from './screens/RecourseScreen'
-import RecourseSearchScreen from './screens/RecourseSearchScreen'
-import HashDetailsScreen from './screens/HashDetailsScreen'
-import AgreementDetailsScreen from './screens/AgreementDetailsScreen'
-import FeedDetailsScreen from './screens/FeedDetailsScreen'
+import TrackScreen from './screens/Feeds/TrackScreen'
+import TrackSearchScreen from './screens/Feeds/TrackSearchScreen'
+import RecourseScreen from './screens/Agreements/RecourseScreen'
+import RecourseSearchScreen from './screens/Agreements/RecourseSearchScreen'
+import HashDetailsScreen from './screens/Feeds/HashDetailsScreen'
+import AgreementDetailsScreen from './screens/Agreements/AgreementDetailsScreen'
+import FeedDetailsScreen from './screens/Feeds/FeedDetailsScreen'
 import AddressDetailsScreen from './screens/AddressDetailsScreen'
 
-import FaucetScreen from './screens/FaucetScreen'
-import AgreementCreateScreen from './screens/AgreementCreateScreen'
-import FeedCreateScreen from './screens/FeedCreateScreen'
+import FaucetScreen from './screens/Faucet/FaucetScreen'
+import AgreementCreateScreen from './screens/Agreements/AgreementCreateScreen'
+import FeedCreateScreen from './screens/Feeds/FeedCreateScreen'
 
 export const App = () => (
   <>

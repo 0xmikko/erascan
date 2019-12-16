@@ -9,7 +9,7 @@ import React, { useState } from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import Web3 from 'web3'
-import FaucetWidget from '../containers/Faucet/FaucetWidget'
+import FaucetWidget from '../../containers/Faucet/FaucetWidget'
 
 const FaucetScreen = () => {
   return (
