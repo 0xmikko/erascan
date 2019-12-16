@@ -14,7 +14,7 @@ export const SearchBarWidget = ({history, prefix, title, placeholder}) => {
   const [searchInput, setSearchInput] = useState('')
   const searchPress = () => {
     console.log(searchInput)
-   history.push(`/${prefix}/search/${searchInput}`);
+   history.push(`${prefix}search/${searchInput}`);
   }
 
   const onSearchLineChanged = e => {

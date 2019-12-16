@@ -9,7 +9,15 @@ import { isEthAddress } from '../../utils/isEthAddress'
 import * as Yup from 'yup'
 
 export const itemName = 'feed'
+export const itemNamePlural = 'feeds'
 export const prefix = '/feeds/'
+export const listFields = `
+  id
+  creator
+  operator
+  hashes
+  createdTimestamp
+  `
 
 export const fields = [
   { name: 'ID', field: 'id', readOnly: true },
@@ -36,9 +44,14 @@ export const fields = [
   {
     name: 'Initial metadata',
     field: 'initMetadata',
-    readOnly: true
+    readOnly: true,
   },
   { name: 'Initial metadataB58', field: 'initMetadataB58', readOnly: true },
   { name: 'Initial calldata', field: 'initCallData', readOnly: true },
-  { name: 'Created', field: 'createdTimestamp', type: 'Timestamp', readOnly: true },
+  {
+    name: 'Created',
+    field: 'createdTimestamp',
+    type: 'Timestamp',
+    readOnly: true,
+  },
 ]

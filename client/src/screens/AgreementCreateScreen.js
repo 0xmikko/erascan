@@ -13,11 +13,7 @@ import AgreementDetailsWidget from '../containers/Agreements/AgreementDetailsWid
 import AgreementCreateWidget from '../containers/Agreements/AgreementCreateWidget'
 import Web3Wrapper from '../components/Web3Wrapper'
 
-const AgreementCreateScreen = ({
-  match: {
-    params: { id },
-  },
-}) => (
+const AgreementCreateScreen = () => (
   <>
     <Helmet>
       <title>Create New Agreement</title>

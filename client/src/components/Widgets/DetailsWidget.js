@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import {Media, Table} from 'react-bootstrap'
+import {Table} from 'react-bootstrap'
 import { gql } from 'apollo-boost'
 import AddressLink from '../../containers/Address/AddressLink'
 import WindowWidget from '../WindowWidget'

@@ -11,7 +11,7 @@ import ButtonLink from '../../components/ButtonLink'
 import AgreementLink from './AgreementLink'
 import AddressLink from '../Address/AddressLink'
 import UserAvatar from 'react-user-avatar'
-import { prefix } from './Entity'
+import {itemNamePlural, prefix} from './Entity'
 
 const renderThead = (
   <thead >
@@ -50,7 +50,7 @@ const renderItem = e => (
   </tr>
 )
 
-const rightToolbar = <ButtonLink to={prefix + 'new'} title={'New agreement'} />
+const rightToolbar = ""//<ButtonLink to={prefix + 'new'} title={'New agreement'} />
 
 export default ({ query, title, variables }) => (
   <>
@@ -58,7 +58,7 @@ export default ({ query, title, variables }) => (
       query={query}
       title={title}
       variables={variables}
-      itemName={'countdownGriefingEscrows'}
+      itemName={itemNamePlural}
       renderThead={renderThead}
       renderItem={renderItem}
       rightToolbar={rightToolbar}

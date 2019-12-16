@@ -5,16 +5,12 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
-
-import TrackSearchBarWidget from '../containers/Feeds/FeedsSearchBarWidget'
-import FeedSearchWidget from '../containers/Feeds/FeedsListSearchWidget'
 import { Helmet } from 'react-helmet'
-import AgreementsListSearch from '../containers/Agreements/AgreementsListSearch'
+import { AgreementsListSearch } from '../containers/Agreements/AgreementsListWidget'
 
 const RecourseSearchScreen = ({
-  history,
   match: {
     params: { search },
   },

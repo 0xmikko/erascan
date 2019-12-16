@@ -5,7 +5,7 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 import React from 'react'
-import {Card, Table} from 'react-bootstrap'
+import { Card, Col, Container, Row, Table } from 'react-bootstrap'
 import { fromNow } from '../../utils/humandate'
 import EthLink from '../../components/EthLink'
 import WindowWidget from '../../components/WindowWidget'
@@ -15,7 +15,11 @@ const ItemsList = ({ data, itemName, renderItem, renderThead }) => {
   const items = data[itemName]
 
   if (items.length === 0) {
-      return <Card><Card.Header>Nothing was found</Card.Header></Card>
+    return (
+      <Card>
+        <Card.Header>Nothing was found</Card.Header>
+      </Card>
+    )
   }
   return (
     <Table style={{ margin: 0, width: '100%' }} cellSpacing={0} cellPadding={0}>
@@ -35,7 +39,15 @@ export default ({
   renderThead,
 }) => (
   <>
-    <h2>{title}</h2>
+    <Row>
+      <Col sm={9} lg={9}>
+        <h2>{title}</h2>
+      </Col>
+      <Col sm={3} lg={3}>
+        <div align={'right'} style={{marginBottom: 8}}>{rightToolbar}</div>
+      </Col>
+    </Row>
+
     <WindowWidget>
       <QueryWrap query={query} variables={variables}>
         <ItemsList

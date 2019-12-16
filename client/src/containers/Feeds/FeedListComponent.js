@@ -43,7 +43,7 @@ const renderItem = e => (
       <br />
       <AddressLink id={e.operator} label={'Operator'} />
     </td>
-    <td align={'center'}>{e.hashes.length}</td>
+    <td align={'center'}>{e.hashes ? e.hashes.length : ""}</td>
   </tr>
 )
 

@@ -9,19 +9,23 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
+const Button2 = ({ title}) => (
+    <Button size={'sm'} style={{ marginRight: 10 }} variant={"success"}>
+        {title}
+    </Button>
+
+)
+
+
 const ButtonLink = ({ to, title }) =>
   to.startsWith('http') ? (
     <a href={to}>
       {' '}
-      <Button size={'sm'} style={{ marginRight: 10 }}>
-        {title}
-      </Button>
+        <Button2 title={title} />
     </a>
   ) : (
     <Link to={to}>
-      <Button size={'sm'} style={{ marginRight: 10 }}>
-        {title}
-      </Button>
+        <Button2 title={title} />
     </Link>
   )
 

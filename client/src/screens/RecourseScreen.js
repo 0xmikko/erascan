@@ -8,20 +8,20 @@
 import React from 'react'
 import { Col, Row, Container } from 'react-bootstrap'
 
-import AgreementsSearchBarWidget from '../containers/Agreements/AgreementsSearchBarWidget'
-import AgreementsListTop20Widget from '../containers/Agreements/AgreementsListTop20Widget'
+import AgreementsSearchBar from '../containers/Agreements/AgreementsSearchBar'
+import { AgreementsListLatestWidget } from '../containers/Agreements/AgreementsListWidget'
 
 const RecourseScreen = ({history}) => (
   <>
     <Container fluid={true}>
       <Row style={{ marginTop: 40 }}>
         <Col sm={12}>
-          <AgreementsSearchBarWidget history={history} />
+          <AgreementsSearchBar history={history} />
         </Col>
       </Row>
       <Row style={{ marginTop: 20 }}>
         <Col sm={12}>
-          <AgreementsListTop20Widget />
+          <AgreementsListLatestWidget  />
         </Col>
       </Row>
     </Container>

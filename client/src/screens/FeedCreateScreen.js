@@ -15,11 +15,7 @@ import Web3Wrapper from '../components/Web3Wrapper'
 import AgreementCreateWidget from '../containers/Agreements/AgreementCreateWidget'
 import FeedCreateWidget from '../containers/Feeds/FeedCreateWidget'
 
-const FeedDetailsScreen = ({
-  match: {
-    params: { id },
-  },
-}) => (
+const FeedCreateScreen = () => (
   <>
     <Helmet>
       <title>Create New Feed</title>
@@ -37,4 +33,4 @@ const FeedDetailsScreen = ({
   </>
 )
 
-export default FeedDetailsScreen
+export default FeedCreateScreen

@@ -12,6 +12,17 @@ export const itemName = 'countdownGriefingEscrow'
 export const itemNamePlural = 'countdownGriefingEscrows'
 export const prefix = '/agreements/'
 
+export const listFields = `
+  id
+  creator
+  operator
+  buyer
+  seller
+  paymentAmount
+  stakeAmount
+  createdTimestamp
+`
+
 export const fields = [
   {
     name: 'ID',
