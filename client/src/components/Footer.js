@@ -33,15 +33,15 @@ export default () => (
           <Col sm={6} lg={3}>
             <div style={{ marginTop: 0 }}>
               <a
-                href="http://t.me/mikael_l"
+                href="https://github.com/MikaelLazarev/erascan"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Policy
+                Github
               </a>
               <br />
               <a
-                href="http://t.me/mikael_l"
+                href="https://github.com/erasureprotocol/erasure-protocol"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -67,7 +67,7 @@ export default () => (
                 />
               </a>
               {'    '}
-              <a href="https://github.com/MikaelLazarev/erascan">
+              <a href="https://t.me/@mikael_l">
                 <FontAwesomeIcon icon={['fab', 'telegram']} size={'lg'} />
               </a>
             </div>

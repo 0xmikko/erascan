@@ -7,12 +7,15 @@ Official site: https://erascan.info
 
 Video presentation: 
 
-### Problem
+### Inspiration
+
+Erasure protocol provides a bundle of interesting technologies which helps developers for creating interesting solutions.
+However, it's difficult to use smartcontracts whithout toolset.  
 
 
 
 ### Solution
-
+Erascan is a tool which combines explorer & faucet utility. 
 
 
 ### Components & stack
