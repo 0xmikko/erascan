@@ -13,6 +13,7 @@ export default ({ history }) => (
   <SearchBarWidget
     prefix={prefix}
     title={'Erasure agreements search'}
+    placeholder={'Search for agreement id / creator address / operator address / buyer address / seller address'}
     history={history}
   />
 )
