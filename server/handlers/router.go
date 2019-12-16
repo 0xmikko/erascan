@@ -9,6 +9,7 @@ package handlers
 import (
 	"github.com/MikaelLazarev/erascan/server/config"
 	"github.com/MikaelLazarev/erascan/server/handlers/accounts"
+	"github.com/MikaelLazarev/erascan/server/handlers/faucets"
 	"github.com/MikaelLazarev/erascan/server/services"
 	"github.com/getsentry/sentry-go"
 	sentrygin "github.com/getsentry/sentry-go/gin"
@@ -52,6 +53,7 @@ func StartServer(services services.Services, port string) {
 	// Api handlers. Restricted area
 	apiRouter := router.Group("/api")
 	accounts.RegisterController(apiRouter, services.AccountsService)
+	faucets.RegisterController(apiRouter, services.FaucetsService)
 
 	// Temporary added to serve landing page
 

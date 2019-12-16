@@ -38,4 +38,5 @@ const AddressDetailsScreen = ({
   </>
 )
 
+
 export default AddressDetailsScreen

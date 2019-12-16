@@ -17,6 +17,6 @@ type (
 	}
 
 	FaucetService interface {
-		SendNMR(address string) error
+		FulFill(address string) error
 	}
 )

@@ -7,16 +7,21 @@
 
 package faucets
 
-import "github.com/MikaelLazarev/erascan/server/services/errors"
+import (
+	"fmt"
+	"github.com/MikaelLazarev/erascan/server/services/errors"
+)
 
 func (s *service) FulFill(address string) error {
+
+	fmt.Println(address)
 	if s.store.IsFullfilledLast24H(address) {
 		return errors.ErrorCantFulFill
 	}
 
 	s.store.AddToList(address)
 
-	
+
 
 	return nil
 }
