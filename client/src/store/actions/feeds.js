@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2019. Mikael Lazarev
  */
-import IPFS from 'ipfs'
+import ipfsClient from 'ipfs-http-client'
 import * as actionTypes from './actionTypes'
 import FeedFactory from '../../contracts/Feed_Factory'
 import { FEED_FACTORY_RINKEBY_ADDRESS } from '../../config'
@@ -12,7 +12,7 @@ import { abiEncodeWithSelector } from '../../utils/ethUtils'
 
 export const createFeed = (feedCreateData, updateHash) => {
   // Getting data from feedCreate Data
-  const { creator, operator, proofHash, metadata } = feedCreateData
+  const { creator, operator, metadata, message } = feedCreateData
 
   console.log('UHASH', updateHash)
 
@@ -24,17 +24,17 @@ export const createFeed = (feedCreateData, updateHash) => {
     // Dispatch Loading event
     dispatch({ type: actionTypes.CREATE_FEED_REQUEST, meta: { updateHash } })
 
-    const node = await IPFS.create({ repo: String(Math.random() + Date.now()) })
+    const ipfs  = await ipfsClient({ host: 'ipfs.infura.io', port: '5001',  protocol: 'https' })
 
 
-    console.log('IPFS node is ready', node)
-    const result = await node.add({message: feedCreateData.message})
-    console.log(result)
-
-
-
-
-    // Get feed instance for Rinkeby deployed contract
+    console.log('IPFS node is ready', ipfs)
+    const content = ipfsClient.Buffer.from(message)
+    const results = await ipfs.add(content)
+    const proofHash = results[0].hash // "Qm...WW"
+    console.log(proofHash)
+    // proofHash:
+    //     '0x2a1acd26847576a128e3dba3aa984feafffdf81f7c7b23bdf51e7bec1c15944c',
+    // // Get feed instance for Rinkeby deployed contract
     const FeedFactoryInstance = new web3.eth.Contract(
       FeedFactory.abi,
       FEED_FACTORY_RINKEBY_ADDRESS

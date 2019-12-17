@@ -36,14 +36,12 @@ const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
     const feedCreateData = {
       creator: accounts[0],
       operator: values.operator,
-      proofHash:
-        '0x2a1acd26847576a128e3dba3aa984feafffdf81f7c7b23bdf51e7bec1c15944c',
       metadata: values.metadata || '0x0',
       message: values.message,
     }
 
     // Generate unique transcaction update ticket to follow events
-    const trUpdate = Date.now() + feedCreateData.proofHash.toString()
+    const trUpdate = Date.now() + Math.random().toString()
 
     setUpdateHash(trUpdate)
 
@@ -68,7 +66,7 @@ const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
       fieldList={fieldsWithMessage}
       onSubmit={onSubmit}
       onSuccessLink={backLink}
-      initialValues={{ creator: accounts[0], operator: accounts[0], msg: "ererer" }}
+      initialValues={{ creator: accounts[0], operator: accounts[0] }}
       submitLabel={'Deploy Feed'}
       submitDisabled={transactionSubmitted}
     />
