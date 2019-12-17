@@ -23,7 +23,7 @@ Track-Record is about proving historical quality. It's the public track record o
 With Erascan your could check latest feeds, explore them and use search by feed id, creator / operator hashes.
 You could also create Feed and add hashes manually using the tool.
 
-####Recourse
+#### Recourse
 Recourse is the final piece of the puzzle. It’s the court system that performs arbitration over breach of contract. It’s the Uber rating system. It’s a coordination mechanism fundamentally hardwired in each of us. It’s also something that can be programmed in a smart contract. This is where Erasure shines.
  
 #### Faucet
