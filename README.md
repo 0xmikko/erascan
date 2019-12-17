@@ -1,8 +1,6 @@
 # erascan
 ### Erasure protocol explorer and playground
 
-Erascan is an open source tool for fast development using erasure protocol (. It combines explorer & faucet.
-
 Official site: https://erascan.info
 
 Video presentation: https://youtu.be/MMRTkGeBBoI
