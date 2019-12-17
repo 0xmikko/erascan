@@ -9,6 +9,9 @@ import * as actionTypes from './actionTypes'
 import FeedFactory from '../../contracts/Feed_Factory'
 import { FEED_FACTORY_RINKEBY_ADDRESS } from '../../config'
 import { abiEncodeWithSelector } from '../../utils/ethUtils'
+const bs58 = require('bs58')
+
+
 
 export const createFeed = (feedCreateData, updateHash) => {
   // Getting data from feedCreate Data
@@ -30,10 +33,13 @@ export const createFeed = (feedCreateData, updateHash) => {
     console.log('IPFS node is ready', ipfs)
     const content = ipfsClient.Buffer.from(message)
     const results = await ipfs.add(content)
-    const proofHash = results[0].hash // "Qm...WW"
+    const hash= results[0].hash // "Qm...WW"
+    const proofHash = '0x' + bs58.decode(hash).slice(2).toString('hex')
     console.log(proofHash)
     // proofHash:
-    //     '0x2a1acd26847576a128e3dba3aa984feafffdf81f7c7b23bdf51e7bec1c15944c',
+    //
+    //'0x2a1acd26847576a128e3dba3aa984feafffdf81f7c7b23bdf51e7bec1c15944c',
+    //'0x12204f75fdc1bbaa5de8df38d55133046d84b7e95c27c70790c3ad4033a207309ee5'
     // // Get feed instance for Rinkeby deployed contract
     const FeedFactoryInstance = new web3.eth.Contract(
       FeedFactory.abi,
