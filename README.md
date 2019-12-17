@@ -23,15 +23,21 @@ Track-Record is about proving historical quality. It's the public track record o
 
 With Erascan your could check latest feeds, explore them and use search by feed id, creator / operator hashes.
 You could also create Feed and add hashes manually using the tool.
+
 ![s1](https://user-images.githubusercontent.com/26343374/71036449-c7a65380-212e-11ea-9dc1-c0f18b8ce314.png)
+
 
 #### Recourse
 Recourse is the final piece of the puzzle. It’s the court system that performs arbitration over breach of contract. It’s the Uber rating system. It’s a coordination mechanism fundamentally hardwired in each of us. It’s also something that can be programmed in a smart contract. This is where Erasure shines.
+
 ![s2](https://user-images.githubusercontent.com/26343374/71036455-cc6b0780-212e-11ea-87c2-9e2c22a3f6e1.png)
+
 
 #### Faucet
 With faucet you could get NMR tokens for testing your application. Currently, you could get 10 NMR each 24 hours.
+
 ![s3](https://user-images.githubusercontent.com/26343374/71036458-ce34cb00-212e-11ea-823b-6dfcd13f3a98.png)
+
 
 ### Technical stack
 
