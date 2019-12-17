@@ -31,7 +31,7 @@ Recourse is the final piece of the puzzle. It’s the court system that performs
 With faucet you could get NMR tokens for testing your application. Currently, you could get 10 NMR each 24 hours.
 
 
-### Components & stack
+### Technical stack
 
 Client: React, web3.js, Graph (https://thegraph.com), GraphQL
 
