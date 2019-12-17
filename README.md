@@ -41,6 +41,6 @@ With faucet you could get NMR tokens for testing your application. Currently, yo
 
 ### Technical stack
 
-Client: React, web3.js, Graph (https://thegraph.com), GraphQL
+Client: React, redux, web3.js, IPFS, Graph (https://thegraph.com), GraphQL
 
 Backend: Golang, go-cache, go-ethereum, gin-gonic
