@@ -32,11 +32,11 @@ const renderThead = (
 const renderItem = e => (
   <tr key={e.id}>
     <td width={50}>
-      <UserAvatar size="48" name="Feed" color={'#CCCCCC'} />
+      <UserAvatar size="48" name="Feed" color={'#4cd23d'} />
     </td>
     <td>
-      <FeedLink id={e.id} />
-      <div className={'TimeFont'}>{fromNow(e.createdTimestamp)}</div>
+      <FeedLink id={e.id} /><br />
+        {fromNow(e.createdTimestamp)}
     </td>
     <td align={'center'}>
       <AddressLink id={e.creator} label={'Creator'} />

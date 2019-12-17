@@ -41,10 +41,10 @@ export default ({
   <>
     <Row>
       <Col sm={9} lg={9}>
-        <h2>{title}</h2>
+        <h2 style={{marginBottom: 8}}>{title}</h2>
       </Col>
       <Col sm={3} lg={3}>
-        <div align={'right'} style={{marginBottom: 8}}>{rightToolbar}</div>
+        <div align={'right'} >{rightToolbar}</div>
       </Col>
     </Row>
 

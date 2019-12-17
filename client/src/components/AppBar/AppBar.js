@@ -19,13 +19,14 @@ import './AppBar.css'
 import logo from '../../logo.png'
 import NavItemLink from "./NavItemLink";
 
-const AppBar = ({ onLogout }) => {
+const AppBar = ({ location: { pathname }}) => {
+  console.log(pathname)
   return (
-    <Container fluid style={{ backgroundColor: '#FFFFFF' }}>
+    <Container fluid >
       <Container>
         <Navbar style={{ textColor: '#000000' }}>
           <Navbar.Brand href="/">
-            <Image src={logo} alt={'logo'} height={40} />
+            <Image src={logo} alt={'logo'} height={30} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
@@ -34,15 +35,15 @@ const AppBar = ({ onLogout }) => {
               <Nav.Link style={{ marginLeft: 20 }} />
             </Nav>
             <Nav variant={'right'}>
-              <NavItemLink to={'/feeds/'} label={'Track-record'} />
-              <NavItemLink to={'/agreements/'} label={'Recourse'} />
-              <NavItemLink to={'/faucet/'} label={'Faucet'} />
+              <NavItemLink to={'/feeds/'} label={'TRACK RECORD'} pathname={pathname}/>
+              <NavItemLink to={'/agreements/'} label={'RECOURSE'} pathname={pathname} />
+              <NavItemLink to={'/faucet/'} label={'FAUCET'} pathname={pathname} />
               {/*<NavItemLink to={'/stat/'} label={'Statistics'} />*/}
 
               <Form inline />
               <Nav title="Rinkeby" id="basic-nav-dropdown" alignRight>
                 <Nav.Item bsPrefix={'nav-link'}>
-                  <a href={"https://rinkeby.etherscan.io/"} style={{color: "#888888"}}>Rinkeby</a>
+                  <a href={"https://rinkeby.etherscan.io/"} style={{color: "#888888"}}>RINKEBY</a>
                 </Nav.Item>
               </Nav>
             </Nav>

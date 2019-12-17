@@ -21,10 +21,10 @@ const FeedCreateScreen = () => (
       <title>Create New Feed</title>
     </Helmet>
     <Web3Wrapper>
-      <Container fluid={true}>
-        <Row style={{ marginTop: 40 }}>
+      <Container fluid={true} style={{ marginTop: 20 }}>
+        <Row >
           <Col sm={12}>
-            <h1 style={{ marginBottom: 20 }}>Create New Feed</h1>
+            <h1 style={{ marginBottom: 30 }}>Create New Feed</h1>
             <FeedCreateWidget />
           </Col>
         </Row>

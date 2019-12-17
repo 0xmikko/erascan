@@ -6,35 +6,87 @@
  */
 
 
+html {
+  --nmr-blue: #00a5ff;
+  --background-color: #fafafc;
+  --foreground-color: #252b31;
+  --secondary-color: #888;
+  --tertiary-color: #aaa;
+  --panel-color: #fff;
+  --panel-border-color: rgba(0, 0, 0, 0.05);
+  /*--label-font: europa, roboto, sans-serif;*/
+  /*--number-font: roboto mono, mono;*/
+  background-color: var(--background-color);
+  height: 100%;
+}
+
+a {
+  color: #252b31;
+}
+
+a:hover{
+  color: #000;
+}
+
 body {
-  background-color: #f8f9fa;
-  min-height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-color);
+  color: black;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-family: 'Lato', sans-serif;
 }
 
 h1 {
-  font-size: 24px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
-  color: #4a4f55;
-  margin-left: 10px;
-  margin-bottom: 25px;
+  font-size: 2em; /* 48 / 16 */
+  line-height: 1em; /* 48 / 48 */
+  padding-bottom: 0.5em;
 }
-
 h2 {
-  font-size: 19.5px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
-  color: #4a4f55;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  font-size: 1.5em; /* 36 / 16 */
+  font-weight: 400;
+  line-height: 1.333333333333333em; /* 48 / 36 */
 }
-
+h3 {
+  font-size: 1.5em; /* 24 / 16 */
+  line-height: 1em; /* 24 / 24 */
+}
 h4 {
-  font-size: 17px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, SansSerif;
-  font-weight: bold;
+  font-size: 1.3125em; /* 21 / 16 */
+  line-height: 1.8em; /* 1.142857142857143em; /* 24 / 21 */
+}
+h5 {
+  font-size: 1.125em; /* 18 / 16 */
+  line-height: 1.333333333333333em; /* 24 / 18 */
+  padding-bottom: 0.1em;
+}
+h6 {
+  font-size: 1em; /* 16 / 16 */
+  line-height: 1.5em; /* 24 / 16 */
+}
+p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em; /* 16 / 16 */
+  line-height: 1.618em; /* 24 / 16 */
+  opacity: 0.6;
 }
 
 table tr td {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 thead {

@@ -18,7 +18,7 @@ const FaucetScreen = () => {
         <title>Faucet</title>
       </Helmet>
       <Container fluid={true}>
-        <Row style={{ marginTop: 40 }}>
+        <Row style={{ marginTop: 20 }}>
           <Col sm={12}>
             <FaucetWidget />
           </Col>

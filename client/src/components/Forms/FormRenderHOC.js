@@ -48,7 +48,16 @@ export default (fieldList, submitLabel, submitDisabled) => {
     return (
       <Form noValidate onSubmit={handleSubmit}>
         <Form.Row>{fields}</Form.Row>
-        <Button type="submit" disabled={submitDisabled}>
+        <Button
+          type="submit"
+          disabled={submitDisabled}
+          style={{
+            marginRight: 10,
+            backgroundColor: '#43cd30',
+            borderColor: '#43cd30',
+            color: '#FFF',
+          }}
+        >
           {submitLabel || 'Save'}
         </Button>
       </Form>

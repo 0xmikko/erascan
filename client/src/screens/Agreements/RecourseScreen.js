@@ -14,12 +14,12 @@ import { AgreementsListLatestWidget } from '../../containers/Agreements/Agreemen
 const RecourseScreen = ({history}) => (
   <>
     <Container fluid={true}>
-      <Row style={{ marginTop: 40 }}>
+      <Row style={{ marginTop: 20 }}>
         <Col sm={12}>
           <AgreementsSearchBar history={history} />
         </Col>
       </Row>
-      <Row style={{ marginTop: 20 }}>
+      <Row style={{ marginTop: 30 }}>
         <Col sm={12}>
           <AgreementsListLatestWidget  />
         </Col>

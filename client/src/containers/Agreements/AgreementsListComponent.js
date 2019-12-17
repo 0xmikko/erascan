@@ -27,7 +27,7 @@ const renderThead = (
 const renderItem = e => (
   <tr key={e.id}>
     <td width={50}>
-      <UserAvatar size="48" name="Agreement" color={'rgba(64,204,196,0.36)'} />
+      <UserAvatar size="48" name="Agreement" color={'rgb(247,204,59)'} />
     </td>
     <td>
       <AgreementLink id={e.id} shorten={true} />

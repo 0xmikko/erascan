@@ -26,9 +26,9 @@ import FaucetScreen from './screens/Faucet/FaucetScreen'
 import AgreementCreateScreen from './screens/Agreements/AgreementCreateScreen'
 import FeedCreateScreen from './screens/Feeds/FeedCreateScreen'
 
-export const App = () => (
+export const App = props => (
   <>
-    <AppBar />
+    <AppBar {...props} />
 
     <Container style={{ minHeight: window.innerHeight - 200 }}>
       <Switch>

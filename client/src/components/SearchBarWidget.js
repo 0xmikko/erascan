@@ -7,14 +7,13 @@
 
 import React, { useState } from 'react'
 import { Card, Form, InputGroup, Button } from 'react-bootstrap'
-import { Redirect } from "react-router";
+import { Redirect } from 'react-router'
 
-
-export const SearchBarWidget = ({history, prefix, title, placeholder}) => {
+export const SearchBarWidget = ({ history, prefix, title, placeholder }) => {
   const [searchInput, setSearchInput] = useState('')
   const searchPress = () => {
     console.log(searchInput)
-   history.push(`${prefix}search/${searchInput}`);
+    history.push(`${prefix}search/${searchInput}`)
   }
 
   const onSearchLineChanged = e => {
@@ -34,7 +33,11 @@ export const SearchBarWidget = ({history, prefix, title, placeholder}) => {
             value={searchInput}
           />
           <InputGroup.Append>
-            <Button variant="primary" onClick={searchPress}>
+            <Button
+              variant="primary"
+              onClick={searchPress}
+              style={{ backgroundColor: '#fed809', borderColor: '#fed809', color: "#000"  }}
+            >
               Search
             </Button>
           </InputGroup.Append>

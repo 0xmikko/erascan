@@ -23,12 +23,12 @@ const TrackSearchScreen = ({
       <title>Track Search Results</title>
     </Helmet>
     <Container fluid={true}>
-      <Row style={{ marginTop: 40 }}>
+      <Row style={{ marginTop: 20 }}>
         <Col sm={12}>
           <FeedsSearchBar history={history} />
         </Col>
       </Row>
-      <Row style={{ marginTop: 20 }}>
+      <Row style={{ marginTop: 30 }}>
         <Col sm={12}>
           <FeedsListSearchWidget search={search} />
         </Col>

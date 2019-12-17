@@ -18,12 +18,12 @@ const TrackScreen = ({history}) => (
       <title>Track & record</title>
     </Helmet>
     <Container fluid={true}>
-      <Row style={{ marginTop: 40 }}>
+      <Row style={{ marginTop: 20 }}>
         <Col sm={12}>
           <FeedsSearchBarWidget history={history}/>
         </Col>
       </Row>
-      <Row style={{ marginTop: 20 }}>
+      <Row style={{ marginTop: 30 }}>
         <Col sm={12}>
           <FeedsListLatestWidget />
         </Col>
