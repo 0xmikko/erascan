@@ -50,11 +50,19 @@ const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
   }
   const backLink = '/agreements/submitted/'
 
+  const fieldsWithMessage = [
+    ...fields,
+    {
+      name: 'Message for proof',
+      field: 'message',
+      type: 'textarea',
+    },
+  ]
   console.log(accounts)
 
   return (
     <FormikForm
-      fieldList={fields}
+      fieldList={fieldsWithMessage}
       onSubmit={onSubmit}
       onSuccessLink={backLink}
       initialValues={{ creator: accounts[0], operator: accounts[0] }}
