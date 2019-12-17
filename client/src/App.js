@@ -6,8 +6,7 @@
  */
 
 import React from 'react'
-import { Route, Switch } from 'react-router'
-import { withRouter } from 'react-router'
+import { Route, Switch, withRouter, Redirect } from 'react-router'
 import { Container } from 'react-bootstrap'
 
 import AppBar from './components/AppBar/AppBar'
@@ -67,7 +66,7 @@ export const App = props => (
           exact={true}
           component={AddressDetailsScreen}
         />
-        <Route path="/*" component={TrackScreen} />
+        <Redirect to={'/feeds/'} />
       </Switch>
     </Container>
     <Footer />
