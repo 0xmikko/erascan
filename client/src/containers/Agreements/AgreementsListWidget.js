@@ -65,7 +65,7 @@ export const AgreementsListSearch = ({ search }) => {
     <AgreementsListComponent
       query={graphQuery}
       title={`Agreements found`}
-      variables={{ search }}
+      variables={{ search: search.toLowerCase() }}
     />
   )
 }

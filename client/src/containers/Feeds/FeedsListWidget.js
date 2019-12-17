@@ -16,6 +16,7 @@ import { Query } from 'react-apollo'
 import * as moment from 'moment'
 import FeedListComponent from './FeedListComponent'
 import { itemNamePlural, listFields } from './Entity'
+import AgreementsListComponent from "../Agreements/AgreementsListComponent";
 
 export const FeedsListLatestWidget = () => {
   const graphQuery = gql`
@@ -31,13 +32,6 @@ export const FeedsListLatestWidget = () => {
 export const FeedsListSearchWidget = ({ search }) => {
   const graphQuery = gql`
   query search($search: String) {
-    ${itemNamePlural}(
-      where: { id: $search }
-      orderBy: createdTimestamp
-      orderDirection: desc
-    ) {
-       ${listFields}
-    }
     
     ${itemNamePlural}(where: { creator: $search }) {
      ${listFields}
