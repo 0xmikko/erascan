@@ -11,7 +11,7 @@ import { Button, Form } from 'react-bootstrap'
 import InputField from './InputField'
 import SelectField from './SelectField'
 
-const renderField = (field, values, errors) => {
+const renderField = (field, values, errors, handleChange) => {
   const inputProps = {
     name: field.field,
     type: field.type || 'text',
@@ -20,6 +20,7 @@ const renderField = (field, values, errors) => {
     editable: field.editable,
     key: field.field,
     values,
+    handleChange,
     errors,
   }
 
@@ -42,8 +43,10 @@ const renderField = (field, values, errors) => {
 }
 
 export default (fieldList, submitLabel, submitDisabled) => {
-  return ({ handleSubmit, values, errors }) => {
-    const fields = fieldList.map(f => renderField(f, values, errors))
+  return ({ handleSubmit, handleChange, values, errors }) => {
+    const fields = fieldList.map(f =>
+      renderField(f, values, errors, handleChange)
+    )
 
     return (
       <Form noValidate onSubmit={handleSubmit}>

@@ -4,7 +4,7 @@
  *
  * Copyright (c) 2019. Mikael Lazarev
  */
-
+import IPFS from 'ipfs'
 import * as actionTypes from './actionTypes'
 import FeedFactory from '../../contracts/Feed_Factory'
 import { FEED_FACTORY_RINKEBY_ADDRESS } from '../../config'
@@ -23,6 +23,16 @@ export const createFeed = (feedCreateData, updateHash) => {
 
     // Dispatch Loading event
     dispatch({ type: actionTypes.CREATE_FEED_REQUEST, meta: { updateHash } })
+
+    const node = await IPFS.create({ repo: String(Math.random() + Date.now()) })
+
+
+    console.log('IPFS node is ready', node)
+    const result = await node.add({message: feedCreateData.message})
+    console.log(result)
+
+
+
 
     // Get feed instance for Rinkeby deployed contract
     const FeedFactoryInstance = new web3.eth.Contract(

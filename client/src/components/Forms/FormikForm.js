@@ -24,16 +24,11 @@ const FormikForm = ({ fieldList, initialValues, onSubmit, submitLabel, submitDis
     <Formik
       validationSchema={schema}
       onSubmit={onSubmit}
-      initialValues={{ ...initialValues }}
+      initialValues={initialValues }
       render={formikRenderHOC(inputFieldsList, submitLabel, submitDisabled)}
     />
   )
 }
 
-FormikForm.propTypes = {
-  api: PropTypes.string.isRequired,
-  resource: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-}
 
 export default FormikForm

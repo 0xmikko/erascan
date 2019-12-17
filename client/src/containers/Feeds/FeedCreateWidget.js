@@ -5,13 +5,14 @@
  * Copyright (c) 2019. Mikael Lazarev
  */
 
-import React, { useEffect, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { connect } from 'react-redux'
 import FormikForm from '../../components/Forms/FormikForm'
 import { fields, itemName } from './Entity'
 import * as actions from '../../store/actions'
 import * as reducers from '../../store/reducers'
 import * as statuses from '../../store/utils/status'
+import * as Yup from "yup";
 
 const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
   const [updateHash, setUpdateHash] = useState(undefined)
@@ -27,7 +28,7 @@ const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
   }
 
   const onSubmit = values => {
-    console.log(values)
+    console.log("VALUES", values)
     // Disable Submit button
     setTransactionSubmitted(true)
 
@@ -38,6 +39,7 @@ const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
       proofHash:
         '0x2a1acd26847576a128e3dba3aa984feafffdf81f7c7b23bdf51e7bec1c15944c',
       metadata: values.metadata || '0x0',
+      message: values.message,
     }
 
     // Generate unique transcaction update ticket to follow events
@@ -56,6 +58,7 @@ const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
       name: 'Message for proof',
       field: 'message',
       type: 'textarea',
+      validation: Yup.string(),
     },
   ]
   console.log(accounts)
@@ -65,7 +68,7 @@ const FeedCreateWidget = ({ accounts, createFeed, transactionUpdates }) => {
       fieldList={fieldsWithMessage}
       onSubmit={onSubmit}
       onSuccessLink={backLink}
-      initialValues={{ creator: accounts[0], operator: accounts[0] }}
+      initialValues={{ creator: accounts[0], operator: accounts[0], msg: "ererer" }}
       submitLabel={'Deploy Feed'}
       submitDisabled={transactionSubmitted}
     />
