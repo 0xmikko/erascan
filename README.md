@@ -61,6 +61,7 @@ DetailsWidget renders infromation for any particular entity
 | fields | Array | Array of objects containg information about rendering values |
 
 Fields format
+
 | Field | Type | Description |
 |-------|------|-------------|
 | name  | String | Title for each field
