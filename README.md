@@ -53,9 +53,12 @@ Erascan uses erasure subgraph (https://api.thegraph.com/subgraphs/name/jgeary/er
 https://github.com/MikaelLazarev/erascan/blob/master/client/src/components/Widgets/DetailsWidget.js
 DetailsWidget renders infromation for any particular entity
 
-!------!------!------------!
-! Name ! Type ! Descrition !
-!------!------!------------!
+
+| Name | Type | Descrition |
+|------|------|------------|
+| id   | String | Id of element to show |
+| itemName | String | Name of variable which used in GraphQL query |
+| fields | Array | Array of objects containg information about rendering values |
 
 #### List Widget
 https://github.com/MikaelLazarev/erascan/blob/master/client/src/components/Widgets/ListWidget.js
