@@ -60,6 +60,15 @@ DetailsWidget renders infromation for any particular entity
 | itemName | String | Name of variable which used in GraphQL query |
 | fields | Array | Array of objects containg information about rendering values |
 
+Fields format
+| Field | Type | Description |
+|-------|------|-------------|
+| name  | String | Title for each field
+| field | String | Field as it provided in GraphQL response |
+| sm    | Number | Value for bootstrap redndering |
+| type  | String | String - for strings, Timestamp for timestamps and Address for rendering ethereum addresses |
+
+
 #### List Widget
 https://github.com/MikaelLazarev/erascan/blob/master/client/src/components/Widgets/ListWidget.js
 ListWidget renders information for list query
