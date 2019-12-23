@@ -74,6 +74,16 @@ Fields format
 https://github.com/MikaelLazarev/erascan/blob/master/client/src/components/Widgets/ListWidget.js
 ListWidget renders information for list query
 
+| Name          | Type            | Description            |
+|---------------|-----------------|------------------------|
+| query         | String          | GraphQL query |
+| variables     | Object          | variables for graphQL query |
+| title         | String          | Title for list |
+| itemName      | String          | item name which would be extracted by GraphQL |
+| renderItem    | React.Component | Render item react component |
+| rightToolbar  | React.Component | React component for right toolbar |
+| renderThead   | React.Component | React component for rendering thead |
+
 In turn, these components use QueryWrap, an universal compnonent which provides functionaly for better querying GraphQL and showing errors / loading messages.
 
 Using this abstractions make code cleaner, you need graph query only to render your info.
