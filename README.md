@@ -44,3 +44,19 @@ With faucet you could get NMR tokens for testing your application. Currently, yo
 Client: React, redux, web3.js, IPFS, Graph (https://thegraph.com), GraphQL
 
 Backend: Golang, go-cache, go-ethereum, gin-gonic
+
+#### React wrapper for Graph Technology (thegraph.com)
+
+Erascan uses erasure subgraph (https://api.thegraph.com/subgraphs/name/jgeary/erasure-rinkeby120) for getting information from smartcontracts. For making this work more flexible, 2 react components were designed:
+
+##### Details Widget 
+https://github.com/MikaelLazarev/erascan/blob/master/client/src/components/Widgets/DetailsWidget.js
+DetailsWidget renders infromation for any particular entity
+
+##### List Widget
+https://github.com/MikaelLazarev/erascan/blob/master/client/src/components/Widgets/ListWidget.js
+ListWidget renders information for list query
+
+In turn, these components use QueryWrap, an universal compnonent which provides functionaly for better querying GraphQL and showing errors / loading messages.
+
+Using this abstractions make code cleaner, you need graph query only to render your info.
